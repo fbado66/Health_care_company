@@ -1,0 +1,7 @@
+<h1> You are viewing the index for request-services controller </h1>
+
+<% @request_services.map do |request_service| %>
+<%= request_service.client.first_name %>
+<%= request_service.skills %>
+<%= request_service.id %> <br>
+<% end %>

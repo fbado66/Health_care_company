@@ -1,0 +1,16 @@
+<h1>You are in Request-services new view</h1>
+
+<%= form_for @request_service do |f| %>
+  <%= f.label :service_id, "Service" %>
+  <%= f.collection_select :service_id, @services, :id, :title %> <br/>
+  <%= f.label :client_id %>
+  <%= f.collection_select :client_id, @clients, :id, :first_name %><br/>
+  <%= f.label :charge_rate %>
+  <%= f.number_field :charge_rate %><br/>
+  <%= f.label :skills%>
+  <%= f.text_field :skills %><br/>
+  <%= f.label :starting_date%>
+  <%= f.date_select :starting_date %><br/>
+
+  <%= f.submit "Ready!" %>
+<% end %>

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service: one
+  client: one
+  starting_date: 2020-09-04 17:21:56
+  charge_rate: 1
+  skills: MyString
+
+two:
+  service: two
+  client: two
+  starting_date: 2020-09-04 17:21:56
+  charge_rate: 1
+  skills: MyString

@@ -1,0 +1,11 @@
+<h1> this is the show page for aide</h1>
+
+<%= @aide.first_name %>
+<%= @aide.last_name %><br/>
+
+<% @aide.request_jobs.map do |request_job| %>
+<%= request_job.request_service.client.first_name %>
+<% end %>
+
+
+

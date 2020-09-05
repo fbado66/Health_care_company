@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  starting_date: 1
+  pay_rate: 1
+  aide: one
+  requestservice: one
+
+two:
+  location: MyString
+  starting_date: 1
+  pay_rate: 1
+  aide: two
+  requestservice: two

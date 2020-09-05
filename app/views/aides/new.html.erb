@@ -1,0 +1,24 @@
+<h1>This is the new for aide </h1>
+
+
+<%= form_for @aide do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %> <br/>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %><br/>
+  <%= f.label :email %>
+  <%= f.text_field :email %><br/>
+  <%= f.label :age %>
+  <%= f.number_field :age %><br/>
+  <%= f.label :gender %>
+  <%= f.text_field :gender %><br/>
+  <%= f.label :address %>
+  <%= f.text_field :address %><br/>
+  <%= f.label :certifications %>
+  <%= f.text_field :certifications %><br/>
+  <%= f.label :role %>
+  <%= f.text_field :role %><br/>
+  
+
+  <%= f.submit "Ready!" %>
+<% end %>

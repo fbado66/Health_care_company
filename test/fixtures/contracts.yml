@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  aide: one
+  service: one
+  availability_to_start: 2020-09-04 17:26:40
+  pay_rate: 1
+
+two:
+  aide: two
+  service: two
+  availability_to_start: 2020-09-04 17:26:40
+  pay_rate: 1
