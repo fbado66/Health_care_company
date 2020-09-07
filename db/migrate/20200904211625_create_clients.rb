@@ -7,10 +7,9 @@ class CreateClients < ActiveRecord::Migration[6.0]
       t.integer :age
       t.string :gender
       t.string :address
-      t.string :medicaid_number
       t.string :password_digest
       t.string :role
-
+      t.references :user
       t.timestamps
     end
   end

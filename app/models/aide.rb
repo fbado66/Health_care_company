@@ -4,5 +4,6 @@ class Aide < ApplicationRecord
     has_many :request_jobs
     has_one :request_service, through: :request_jobs
 
-    has_secure_password
+    belongs_to :user
+
 end

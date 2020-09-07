@@ -1,3 +1,11 @@
 <h1> You are in Request-Job index page</h1>
 
-<%= @request_jobs %>
+<% @request_jobs.map do |request_job |  %>
+<%= request_job.request_service.client.first_name %>
+
+
+<p> as the client <br> working with <br> </p>
+<%= request_job.aide.first_name %>
+
+
+<% end %>
