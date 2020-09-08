@@ -1,11 +1,27 @@
 <h1> this is the show page for aide</h1>
 
-<%= @aide.first_name %>
-<%= @aide.last_name %><br/>
+First Name: <%= @current_aide.first_name %><br>
+Last Name: <%= @current_aide.last_name %><br>
 
-<% @aide.request_jobs.map do |request_job| %>
-<%= request_job.request_service.client.first_name %>
+    <% if @current_aide.contracts.count > 0 %>
+ <p> Contracts you have as in right now  </p>
+
+ <% @current_aide.contracts.map do |contract| %>
+ <%= link_to contract.availability_to_start, contract_path(contract)  %> <br>
+ <% end %>
+
+ <% else %>
+
+You have no contracts yet  
+
 <% end %>
+<br>
+
+<%= link_to "Apply to Services" , services_path %>
+
+
+
+
 
 
 

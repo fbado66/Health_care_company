@@ -1,1 +1,19 @@
 <h1> You are in services index view</h1>
+<ul>
+<% @services.map do |service| %>
+<li><%= service.title %><br>
+<%= service.content %> <br>
+Skills for this services: <%= service.skills %></li> <br>
+
+<% if @current_aide %>
+<%= link_to "apply with a contract", new_contract_path %>
+<% elsif @current_client%>
+<%= link_to "apply for this service", new_request_service_path %>
+
+
+<% end %>
+
+</ul>
+
+
+<% end %>

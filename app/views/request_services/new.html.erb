@@ -2,9 +2,8 @@
 
 <%= form_for @request_service do |f| %>
   <%= f.label :service_id, "Service" %>
-  <%= f.collection_select :service_id, @services, :id, :title %> <br/>
-  <%= f.label :client_id %>
-  <%= f.collection_select :client_id, @clients, :id, :first_name %><br/>
+  <%= f.collection_select :service_id, @service, :id, :title %> <br/>
+  
   <%= f.label :charge_rate %>
   <%= f.number_field :charge_rate %><br/>
   <%= f.label :skills%>

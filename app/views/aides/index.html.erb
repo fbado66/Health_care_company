@@ -1,0 +1,11 @@
+<h1> Hello You are here </h1>
+
+<h2> Join the team, check out the group. </h2>
+
+<% @aides.map do |aide| %> 
+<%= aide.first_name %> 
+<% end %>
+
+<br>
+
+<%= link_to 'Explore Services', services_path %>

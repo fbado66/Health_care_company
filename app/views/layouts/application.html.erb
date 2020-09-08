@@ -11,31 +11,24 @@
 
   <body>
 
- <% if check_and_see_if_someone_is_logged_in_as_client? %>
+    <% if check_and_see_if_someone_is_logged_in_as_aide? %>
       <nav>
-        LOGGED IN: <%= @current_user.first_name %> -- <%= @current_user.role %>    
-
+        Aide In: <%= @current_aide.first_name %> -- <%= @current_aide.age %>    
         <%= button_to "LOG OUT", logout_path, method: :delete %>
       </nav>
 
-      <% elsif check_and_see_if_someone_is_logged_in_as_aide? %>
+    <% elsif check_and_see_if_someone_is_logged_in_as_client? %>
       <nav>
-        LOGGED IN: <%= @current_user.first_name %> -- <%= @current_user.role %>    
-
-        <%= button_to "LOG OUT", logout_path, method: :delete %>
+        Client In: <%= @current_client.first_name %> -- <%= @current_client.age %>    
+        <%= button_to "LOG OUT", logout_2_path, method: :delete %>
       </nav>
-
-  
+      
     <% else %>
       <nav> 
-        <%= link_to "LOGIN PATH CLICK HERE", login_path %>
-
+      <%= link_to "LOGIN PATH CLICK HERE", login_path %>
       </nav>
+
     <% end %>
-
-
-
-  
       
     <%= yield %>
   </body>

@@ -1,5 +1,8 @@
 class ContractsController < ApplicationController
-    skip_before_action :authorized_to_see_page_client, only: [:login, :handle_login, :new, :create]
+    helper_method :check_and_see_if_someone_is_logged_in_as_aide?
+    before_action :authorized_to_see_page_aide
+    skip_before_action :authorized_to_see_page_aide, only: [:index]
+    # skip_before_action :authorized_to_see_page_client, only: [:login, :handle_login, :new, :create]
 
     def index 
         @contracts = Contract.all 
@@ -15,10 +18,21 @@ class ContractsController < ApplicationController
         @services = Service.all
     end 
 
+
     def create
-        @contract = Contract.create(contract_params)
-        redirect_to contract_path(@contract)
+        @current_aide = Aide.find_by(id: session[:aide_id]) 
+        @contract = @current_aide.contracts.create(contract_params)
+        redirect_to contract_path(@current_aide)
     end 
+
+    def destroy
+        @contract = Contract.find(params[:id])
+        @contract.destroy
+        redirect_to contract_path(@current_aide)
+    end
+
+
+    private
     
     def contract_params
         params.require(:contract).permit(:aide_id, :service_id, :availability_to_start, :pay_rate)

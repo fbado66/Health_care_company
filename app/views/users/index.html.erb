@@ -1,6 +1,14 @@
 <h1> This is the user index page </h1>
 
+
 <% @users.map do |user|%>
 <%= user.first_name %>
 <% end %>
+
+
+
+<br>
+<br>
+
+<%= link_to "View Services", services_path %>
 

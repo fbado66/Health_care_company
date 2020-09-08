@@ -1,0 +1,13 @@
+<h1>You are in the request_services show </h1>
+
+Starting date: <%= @request_service.starting_date %><br>
+Skills: <%= @request_service.skills %><br>
+Your name: <%= @request_service.client.user.first_name %><br>
+Your email: <%= @request_service.client.user.email %><br>
+
+<%= link_to "Delete this thing", @request_service, :method => :delete %>
+
+<br> <br>
+<%= link_to "Apply to more services", services_path %>
+
+

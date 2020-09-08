@@ -2,3 +2,8 @@
 
 <%= @contract.availability_to_start %> <br>
 <%= @contract.aide.first_name %>
+
+<%= link_to "Delete this thing", @contract, :method => :delete %>
+
+<br> <br>
+<%= link_to "Get more contracts", services_path %>

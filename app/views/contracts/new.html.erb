@@ -2,8 +2,7 @@
 
 
 <%= form_for @contract do |f| %>
-  <%= f.label :aide_id, "Aide" %>
-  <%= f.collection_select :aide_id, @aides, :id, :first_name %> <br/>
+
   <%= f.label :service_id %>
   <%= f.collection_select :service_id, @services, :id, :title %><br/>
   <%= f.label :availability_to_start %>

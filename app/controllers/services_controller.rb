@@ -1,11 +1,30 @@
 class ServicesController < ApplicationController
-
+   helper_method :check_and_see_if_someone_is_logged_in_as_client?
+   before_action :authorized_to_see_page_aide
+   skip_before_action :authorized_to_see_page_aide, only: [:index]
+   
+   # CHECK IF I NEED IT FOR CLIENT ACCESS 
+   # before_action :authorized_to_see_page_client
+   # skip_before_action :authorized_to_see_page_client, only: [:index]
+   
     def index 
+      @current_aide = Aide.find_by(id: session[:aide_id]) 
+      @current_client = Client.find_by(id: session[:client_id]) 
+
+
         @services = Service.all 
     end 
 
     def show 
+      @current_aide = Aide.find_by(id: session[:aide_id]) 
+      @current_client = Client.find_by(id: session[:client_id]) 
+
+      if @current_aide
         @service = Service.find(params[:id])
+      else
+        
+         redirect_to new_aide_path
+      end 
     end 
     
      def new 

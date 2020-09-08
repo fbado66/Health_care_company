@@ -1,3 +1,15 @@
 <h1> You are in the show for services view</h1>
 
-<%= @service.id %> - <% @service.title %> -- <%= @service.content %> ---- <%= @service.skills %>
+ <% @service.title %> -- <%= @service.content %> ---- <%= @service.skills %>
+
+<br><br>
+
+
+<br><br>
+<% if @current_aide %>
+<%= link_to "Aide Apply now", new_contract_path %>
+<% elsif @current_client %>
+<%= link_to "Apply now", new_request_service_path %>
+<% else %>
+Hello Admin
+<% end %>
