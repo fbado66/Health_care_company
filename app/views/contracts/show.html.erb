@@ -1,9 +1,16 @@
 <h1> You are in Contract Show </h1>
 
-<%= @contract.availability_to_start %> <br>
-<%= @contract.aide.first_name %>
+ Hello <%= @contract.aide.first_name %> <%= @contract.aide.last_name %>, <br><br>
+ What would you like to do Regarding this job you have applied for? <br><br>
 
-<%= link_to "Delete this thing", @contract, :method => :delete %>
+Service: <%= @contract.service.title %> <br>
+Date you can start: <%= @contract.availability_to_start %> <br>
+Pay rate you are looking for: $ <%= @contract.pay_rate %>/hr <br><br>
+
+
+<%= link_to "Delete", @contract, :method => :delete %> <br> <br>
+<%= link_to "EDIT", edit_contract_path(@contract) %> <br>
+
 
 <br> <br>
-<%= link_to "Get more contracts", services_path %>
+<%= link_to "RETURN TO MY PROFILE", profile_path %>

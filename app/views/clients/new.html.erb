@@ -10,18 +10,18 @@
   <%= f.text_field :last_name %><br/>
   <%= f.label :email %>
   <%= f.text_field :email %><br/>
-  <%= f.label :role %>
-  <%= f.select :role, options_for_select(["aide", "client"]) %><br/>
-  <%= f.label :password %>
-  <%= f.password_field  :password %>
-  
+  <%= f.label :age %>
+  <%= f.number_field :age %><br/>
+  <%= f.label :town_you_live_in %>
+  <%= f.select :town_you_live_in, options_for_select(["Brooklyn", "Queens", "Bronx", "Jamaica", "Manhattan", "Long Island"]) %><br/>
   <%= f.label :gender %>
-  <%= f.text_field :gender %><br/>
-  <%= f.label :address %>
-  <%= f.text_field :address %><br/>
-  
-  
-  
+  <%= f.select :gender, options_for_select(["Female", "Male"])%><br/>
+  <%= f.label :preference_on_aides %>
+  <%= f.select :preference_on_aides, options_for_select(["Male", "Female", "It makes no difference"]) %><br/>
+  <%= f.label :password %>
+  <%= f.password_field  :password %><br>
 
-  <%= f.submit "Ready!" %>
+  <%= f.submit "Register Now!" %>
 <% end %>
+
+

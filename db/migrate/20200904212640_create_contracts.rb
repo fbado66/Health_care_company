@@ -5,6 +5,7 @@ class CreateContracts < ActiveRecord::Migration[6.0]
       t.belongs_to :service, null: false, foreign_key: true
       t.date :availability_to_start
       t.integer :pay_rate
+      t.string :title
 
       t.timestamps
     end

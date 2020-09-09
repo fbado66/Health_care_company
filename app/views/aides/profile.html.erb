@@ -1,0 +1,21 @@
+<h1> Profile for Aide</h1>
+
+<%= @current_aide.first_name %>
+<%= @current_aide.last_name %><br/>
+<br>
+
+JOBS I HAVE APPLIED TO<br><br>
+   <%@current_aide.contracts.map do |contract| %>
+     Title: <%= contract.title %><br>
+    Service: <%= link_to contract.service.title, contract_path(contract)%> <br>
+   My availablity to Start: <%= contract.availability_to_start %><br>
+   Pay Rate I am looking for: $ <%= contract.pay_rate %>/hr<br>
+       <br> <br>
+
+   <% end %>
+ 
+
+ 
+<br>
+
+<%= link_to "Apply to Services" , services_path %>

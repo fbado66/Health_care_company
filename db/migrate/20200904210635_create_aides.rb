@@ -6,10 +6,10 @@ class CreateAides < ActiveRecord::Migration[6.0]
       t.string :email
       t.integer :age
       t.string :gender
-      t.string :address   
+      t.string :town_you_live_in   
+      t.string :town_you_can_work   
       t.string :password_digest
-      t.string :role   
-      t.references :user
+      t.string :certifications   
       t.timestamps
     end
   end

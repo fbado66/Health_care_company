@@ -1,0 +1,60 @@
+<h1>This is your profile Master <%= @current_admin.first_name %> </h1>
+
+ALL CLIENTS <br>
+<% @clients.map do |client| %> 
+<%= client.first_name %> <br>
+<% end %>
+<br><br><br> 
+
+ALL AIDES <br>
+<% @aides.map do |aide| %> 
+<%= aide.first_name %> <br>
+<% end %>
+<br><br><br> 
+
+
+ALL Contracts <br>
+<% @contracts.map do |contract| %> 
+Type of service required: <%=contract.title %> <br>
+availability to start: <%= contract.availability_to_start %> <br>
+Name of aide: <%= contract.aide.first_name %> <br>
+Gender of Aide: <%= contract.aide.gender %> <br>
+Pay rate looking for: $ <%= contract.pay_rate %>/ hr <br>
+
+Location the aide lives in: <%= contract.aide.town_you_live_in %> <br>
+Location the aide is willing to go work: <%= contract.aide.town_you_can_work %> <br>
+Aide Certifications: <%= contract.aide.certifications %> <br>
+
+
+
+
+<br><% end %>
+<br><br><br> 
+
+ALL people needing my help Request_services <br><br>
+<% @request_services.map do |request_service| %> 
+    Service: <%= request_service.service.title %> <br>
+    Hours requested: <%= request_service.hours %> a week <br>
+            Comments: <%= request_service.comments %> <br>
+            Location to execute this service: <%= request_service.location %> <br>
+
+        <% request_service.service.clients.map do |client| %>
+        Client: <%= client.first_name %> <%= client.last_name %><br>
+        Client's Location:  <%= client.town_you_live_in %> <br>
+        Client's Gender: <%= client.gender %> <br>
+        Client's preference for Aides: <%= client.preference_on_aides %> <br>
+
+        <br><% end %>
+<% end %>
+<br><br><br> 
+
+<%= link_to "Create Request-jobs", new_request_job_path %>
+<br><br>
+
+Request_jobs already done so far <br><br>
+ <% @request_jobs.map do |request_job| %> 
+Aide: <%=request_job.aide.first_name %><br>
+Client <%= request_job.request_service.client.first_name %><br>
+
+Starting_date: <%= request_job.starting_date %><br><br>
+<% end %>

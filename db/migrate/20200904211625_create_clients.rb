@@ -6,10 +6,9 @@ class CreateClients < ActiveRecord::Migration[6.0]
       t.string :email
       t.integer :age
       t.string :gender
-      t.string :address
+      t.string :town_you_live_in
       t.string :password_digest
-      t.string :role
-      t.references :user
+      t.string :preference_on_aides
       t.timestamps
     end
   end

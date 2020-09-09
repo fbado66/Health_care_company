@@ -1,0 +1,37 @@
+<h1> You are in the profile view for client</h1>
+
+<h1> Welcome </h1>
+Hello 
+<%= @current_client.first_name %> <%= @current_client.last_name %><br/>
+
+Here is a little info about you<br><br>
+Your town: <%= @current_client.town_you_live_in%><br>
+Age: <%= @current_client.age %><br>
+Notification and important news are being sent at: <%= @current_client.email %><br>
+
+
+<br>
+
+   Cases you have request assistance with <br>
+
+   <%@current_client.request_services.map do |request_service| %>
+   Service: <%= link_to request_service.service.title, request_service_path(request_service) %> <br>
+   You want this service to start on: <%= request_service.starting_date %><br>
+   Hours requested for the service: <%= request_service.hours %> / a week <br>
+   Comments for the agency: <%= request_service.comments %> <br>
+
+       <br> <br>
+
+   <% end %>
+   
+ 
+
+ 
+<br>
+
+<%= link_to "Apply to Services" , services_path %>
+
+
+
+
+

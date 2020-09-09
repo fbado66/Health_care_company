@@ -1,4 +1,6 @@
 <h1> You are viewing the request_job show view</h1>
 
-<%= @request_job.aide.first_name %>
+Aide: <%= @request_job.aide.first_name %><br>
+Client <%= @request_job.request_service.client.first_name %><br>
+
 <%= @request_job.starting_date %>
