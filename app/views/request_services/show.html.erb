@@ -1,19 +1,40 @@
-<h1>You are in the request_services show </h1>
-Hello <%= @request_service.client.first_name %><br><br>
 
-Service: <%= @request_service.service.title %><br>
-Starting date for this service: <%= @request_service.starting_date %><br>
-Hours Requested: <%= @request_service.hours %> a week<br>
-Your comments for the Health Care Agency: <%= @request_service.comments %><br><br>
+       
 
 
 
- 
-<%= link_to "DELETE", @request_service, :method => :delete %> <br><br>
-<%= link_to "EDIT", edit_request_service_path(@request_service) %> <br>
+
+
+
+<div class="container">
+
+
+ Hello <%= @request_service.client.first_name %> <%= @request_service.client.last_name %>, <br><br>
+ What would you like to do Regarding this service you have applied for? <br><br>
+
+ <div class="card" style="width: 28rem;">
+  <div class="card-body">
+
+    <h5 class="card-title"><%= @request_service.service.title %> </h5>
+    
+        <p class="card-text">Starting date: <%= @request_service.starting_date %> <br>
+        <p class="card-text">Hours requested: <%= @request_service.hours %> a week <br>
+        <p class="card-text">Your comments for the Health Care Agency: <%= @request_service.comments %>
+<br>
+
+</p>
+<%= link_to "EDIT", edit_request_service_path(@request_service), :class => "btn btn-success" %> <br>
+<br>
+    <%= link_to "DELETE", @request_service, :method => :delete, :class => "btn btn-danger" %> <br> <br>
+
+  </div>
+</div>
+
+
+
 
 
 <br> <br>
-<%= link_to "GO BACK TO MY PROFILE", my_profile_path %>
+<%= link_to "RETURN TO MY PROFILE", my_profile_path, :class => "btn btn-info" %>
 
-
+</div>

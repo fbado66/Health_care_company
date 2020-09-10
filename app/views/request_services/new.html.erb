@@ -1,18 +1,25 @@
-<h1>You are in Request-services new view</h1>
 
-<%= form_for @request_service do |f| %>
+
+<div class="container">
+  <h2>Let's get you the care you deserved</h2>
+    <br><br>
+      <img src= "https://admin.visitingangels.com/cgcimages/099-16x7-16x7-16x7.jpg" class="card-img-center" alt="...">
+    <br><br>
+      <div class="container">
+        <%= form_for @request_service do |f| %>
   <%= f.label :service_id, "Service" %>
   <%= f.collection_select :service_id, @services, :id, :title %> <br/>
   <%= f.label :location, "which Borough would you like to have this service on" %><br/>
   <%= f.select :location, options_for_select(["Brooklyn", "Queens", "Bronx", "Jamaica", "Manhattan", "Long Island"]) %><br/>
   <%= f.label :hours, "How Many hours a week are you requesting this sevice for?" %>
-  <%= f.number_field :hours %>/ a week<br/>
+  <%= f.number_field :hours %> hours a week<br/>
   <%= f.label :comments, "How can we maximize this service" %>
   <%= f.text_field :comments %><br/>
   <%= f.label :starting_date, "When would you like to start?"%>
   <%= f.date_select :starting_date %><br/>
 
-  <%= f.submit "Ready!" %>
+  <%= f.submit "READY!", :class => 'btn btn-success'%>
 <% end %>
+</div>
 
 

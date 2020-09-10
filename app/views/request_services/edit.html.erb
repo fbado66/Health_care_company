@@ -1,6 +1,12 @@
-<h1>You are in Request-services Edit view</h1>
 
-<%= form_for @request_service do |f| %>
+
+<div class="container">
+  <h2>Let's personalize your care even more</h2>
+    <br><br>
+      <img src= "https://www.synergyhomecare.com/media/3042932/home-care-services-feature.jpg" class="card-img-center" alt="...">
+    <br><br>
+      <div class="container">
+        <%= form_for @request_service do |f| %>
   <%= f.label :service_id, "Service" %>
   <%= f.collection_select :service_id, @services, :id, :title %> <br/>
   <%= f.label :location, "which Borough would you like to have this service on" %><br/>
@@ -12,7 +18,6 @@
   <%= f.label :starting_date, "When would you like to start?"%>
   <%= f.date_select :starting_date %><br/>
 
-  <%= f.submit "Ready!" %>
+  <%= f.submit "DONE!", :class => 'btn btn-success'%>
 <% end %>
-
-
+</div>

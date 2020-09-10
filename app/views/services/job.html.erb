@@ -1,27 +1,3 @@
-<h1> You are in the job view for services </h1>
-
-<ul>
-
-    <% @services.map do |service| %>
-        <li> Title: <br>
-        <%= service.title%><br>
-        <%= service.content_2 %> <br>
-        Responsabilities: 
-        <%= service.responsabilities %> <br>
-        Work Schedule: 
-        <%= service.work_schedule %> <br>
-        Salary: 
-        <%= service.salary_content %> <br>
-        Skills for this services: <br>
-        <%= service.skills %><br></li>
-        <br> <br>
-            <% if % @current_aide %>
-                <%= link_to "Explore Now", new_contract_path %>
-                <% else %>
-                <%= link_to "Explore Now", login_path %>
-            <% end %>     
-    <% end %>     
-</ul>
 
 
 <div class="container">

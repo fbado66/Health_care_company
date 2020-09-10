@@ -1,4 +1,9 @@
-<h1>This is the new for client </h1>
+<div class="container">
+
+<h1>Please join our Family </h1> <br>
+
+<img src= "https://www.ameribesthomecare.com/wp-content/uploads/2020/01/a-senior-woman-in-wheelchair-with-a-health-J3NF2EU.jpg"> 
+<br><br>
 
 
 <%= form_for @client do |f| %>
@@ -23,7 +28,7 @@
   <%= f.label :password %>
   <%= f.password_field  :password %><br>
 
-  <%= f.submit "Register Now!" %>
+  <%= f.submit "Register Now!", :class => "btn btn-success" %>
 <% end %>
 
-
+</div>

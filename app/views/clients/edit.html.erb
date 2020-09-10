@@ -1,4 +1,9 @@
-<h1>This is the edit for client </h1>
+<div class="container">
+
+<h1>Edit Your Profile </h1> <br>
+<br>
+<img src="https://tjn-blog-images.s3.amazonaws.com/wp-content/uploads/2015/06/20004912/home-health-aide.jpg">
+<br><br><br>
 
 
 <%= form_for @client do |f| %>
@@ -23,7 +28,8 @@
   <%= f.label :password %>
   <%= f.password_field  :password %><br>
 
-  <%= f.submit "Register Now!" %>
+  <%= f.submit "UPDATE!", :class => "btn btn-success" %>
 <% end %>
 
 
+</div>

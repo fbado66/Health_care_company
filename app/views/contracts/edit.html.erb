@@ -1,18 +1,23 @@
-<h1>This is edit for contract </h1>
 
 
-<%= form_for @contract do |f| %>
+<div class="container">
+          <h2 >Edit this contract</h2>
 
-  <%= f.label :title, "I would like to sign up for this service"  %>
-  <%= f.text_field :title %><br>
-  <%= f.label :service_id %>
-  <%= f.collection_select :service_id, @services, :id, :title %><br/>
-  <%= f.label :availability_to_start, "Where can You start Working"  %>
-  <%= f.date_select :availability_to_start  %><br/>
-  <%= f.label :pay_rate ,"What is the pay-rate you are looking for" %>
-  $ <%= f.number_field :pay_rate %> /hr<br/> 
-  
-  
+    <br><br>
+      <img src= "https://www.adulteducationworks.com/wp-content/uploads/2019/10/Advanced-Allied-Health-Assistant.jpg" class="card-img-center" alt="...">
+    <br><br>
+      <div class="container">
+        <%= form_for @contract do |f| %>
 
-  <%= f.submit "Ready!" %>
-<% end %>
+          <%= f.label :service_id %>
+          <%= f.collection_select :service_id, @services, :id, :title %><br/>
+          <%= f.label :title, "Let's give it an unique title for you to remember it"  %>
+          <%= f.text_field :title %><br>
+          <%= f.label :availability_to_start, "Where can You start Working"  %>
+          <%= f.date_select :availability_to_start  %><br/>
+          <%= f.label :pay_rate ,"What is the pay-rate you are looking for" %>
+          $ <%= f.number_field :pay_rate %> / hr<br/> 
+          <%= f.submit "DONE", :class => "btn btn-success" %>
+        <% end %>
+      </div>
+</div>

@@ -1,19 +1,35 @@
-<h1> You are viewing the request_job show view</h1>
+<div class="container">
 
-Service : <%=@request_job.request_service.service.title %><br>
-Aide: <%= @request_job.aide.first_name %><br>
-Client:  <%= @request_job.request_service.client.first_name %><br>
-Client's Location: <%=@request_job.request_service.client.town_you_live_in %> <br>
-Client prefers to work with <%=@request_job.request_service.client.preference_on_aides %> aides <br>
-Pay Rate for Aide: $ <%=@request_job.pay_rate %> / Hour <br>
-Hours granted for this case : <%=@request_job.hours %> / weekly<br>
-Case Starting services on: <%= @request_job.starting_date %> <br>
-Comments for this case: <%=@request_job.comments %>
+<div class="card" style="width: 48rem;">
+  <img src="https://www.thedowerhousewinchester.co.uk/images/made/images/uploads/general_images/nursing-care-winchester_1600_630_80_s_c1_1x.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">What would you like to do with this request?</h5>
+    <p class="card-text"><strong>Service: </strong> <%=@request_job.request_service.service.title %></p>
+    <p class="card-text"><strong>Aide: </strong> <%= @request_job.aide.first_name %></p>
+    <p class="card-text"><strong>Client: </strong> <%= @request_job.request_service.client.first_name %></p>
+    <p class="card-text"><strong>Client's Location: </strong>  <%=@request_job.request_service.client.town_you_live_in %></p>
+    <p class="card-text"><strong>Client's prefers to work with : </strong> <%=@request_job.request_service.client.preference_on_aides %> aides </p>
+    <p class="card-text"><strong>Pay Rate: </strong> $ <%=@request_job.pay_rate %> / Hour</p>
+        <p class="card-text"><strong>Weekly hours for this case: </strong> <%=@request_job.hours %> hours</p>
+
+    <p class="card-text"><strong>Case Starts on : </strong> <%= @request_job.starting_date %></p>
+    <p class="card-text"><strong>Comments: </strong> <%=@request_job.comments %></p>
+
+<%= link_to "EDIT", edit_request_job_path(@request_job), :class => "btn btn-warning" %> <br> <br>
+
+<%= link_to "CANCEL SERVICES", @request_job, :method => :delete, :class => "btn btn-danger"%><br> <br>
+  </div>
+</div>
+
+
+
 
 <br><br><br>
-<%= link_to "CANCEL SERVICES", @request_job, :method => :delete %><br> <br>
-<%= link_to "EDIT", edit_request_job_path(@request_job) %> <br>
 
 
 <br> <br>
-<%= link_to "GO BACK TO PROFILE", admin_profile_path %>
+<%= link_to "GO BACK TO PROFILE", admin_profile_path, :class => "btn btn-primary" %>
+<br><br><br>
+
+
+</div>

@@ -62,39 +62,32 @@
 
 
 
-
-
-
-  
-
     <% if check_and_see_if_someone_is_logged_in_as_aide? %>
-      <nav>
-        Aide In: <%= @current_aide.first_name %> -- <%= @current_aide.age %>    
-        <%= button_to "LOG OUT", logout_path, method: :delete %>
-        <%= link_to "My Profile", profile_path, method: :get  %>
-      </nav>
 
+<nav class="nav flex-column">
+  <a class="nav-link active" >Hello <%= @current_aide.first_name %></a>
+  <a class="nav-link"><%= button_to "LOG OUT", logout_path, method: :delete, :class => "btn btn-danger" %></a>
+  <a class="nav-link" >        <%= button_to "My Profile", profile_path, method: :get, :class => "btn btn-success"  %>
+</a>
+</nav>
     <% elsif check_and_see_if_someone_is_logged_in_as_client? %>
-      <nav>
-        Client In: <%= @current_client.first_name %> -- <%= @current_client.age %>    
-        <%= button_to "LOG OUT", logout_2_path, method: :delete %>
-        <%= link_to "My Profile", my_profile_path, method: :get  %>
-      </nav>
-
+<nav class="nav flex-column">
+  <a class="nav-link active" >Hello <%= @current_client.first_name %></a>
+  <a class="nav-link"><%= button_to "LOG OUT", logout_2_path, method: :delete, :class => "btn btn-danger" %></a>
+  <a class="nav-link" >        <%= button_to "My Profile", my_profile_path, method: :get, :class => "btn btn-success"  %>
+</a>
+</nav>
       <% elsif check_and_see_if_someone_is_logged_in_as_admin? %>
-      <nav>
-        Master: <%= @current_admin.first_name %>     
-        <%= button_to "LOG OUT", logout_3_path, method: :delete %>
-        <%= link_to "My Profile", admin_profile_path, method: :get  %>
-      </nav>
-      
-    <% else %>
-      <nav> 
-      <%= link_to "LOGIN PATH CLICK HERE", login_path %>
-      </nav>
+      <nav class="nav flex-column">
+  <a class="nav-link active" > Master: <%= @current_admin.first_name %></a>
+  <a class="nav-link"><%= button_to "LOG OUT", logout_3_path, method: :delete, :class => "btn btn-danger" %></a>
+  <a class="nav-link" > <%= button_to "My Profile", admin_profile_path, method: :get, :class => "btn btn-success"  %>
+</a>
+</nav>
 
-    <% end %>
-      
+<% end %>
+  
+  
     <%= yield %>
 
 

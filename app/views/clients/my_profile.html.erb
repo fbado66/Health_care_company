@@ -1,58 +1,140 @@
-<h1> You are in the profile view for client</h1>
+<div class="container">
+    <h2> Welcome to your Igor Space <%= @current_client.first_name %> <%= @current_client.last_name %><br/>
+ </h2>
+    <br><br>
+    
 
-<h1> Welcome </h1>
+    <div class="card" style="width: 28rem;">
+    <p class= 'text-center'> Your Profile</p>
+        <img src="https://i1.sndcdn.com/avatars-000316683055-pz96wm-t500x500.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text"> <strong> Name:</strong> <%= @current_client.first_name %> <%= @current_client.last_name %><br/>
+          <p class="card-text"> <strong> Phone:</strong> <%= @current_client.phone %><br>
+          <p class="card-text"> <strong> Your town:</strong> <%= @current_client.town_you_live_in%><br>
+          <p class="card-text"> <strong> Age:</strong> <%= @current_client.age %> years old <br/>
+          <p class="card-text"> <strong> You prefer to work with </strong> <%= @current_client.preference_on_aides %> aides <br>
+          <p class="card-text"> <strong> Notification and important news are being sent at: </strong> <%= @current_client.email %><br>
+          </p>
+        </div>
+        <%= link_to "Adjust my Account", edit_client_path(@current_client), :class => 'btn btn-secondary' %> <br>
+    </div>
 
-Hello <%= @current_client.first_name %> <%= @current_client.last_name %><br/>
+    <br><br><br>
 
-Here is a little info about you<br><br>
-Phone: <%= @current_client.phone %><br>
-Your town: <%= @current_client.town_you_live_in%><br>
-Age: <%= @current_client.age %><br>
-You prefer to work with <%= @current_client.preference_on_aides %> aides <br>
-Notification and important news are being sent at: <%= @current_client.email %><br>
-
-<%= link_to "Adjust my Account", edit_client_path(@current_client) %> <br>
-
-
-<hr>
-
-
-<br>
-
-   Cases you have request assistance with <br>
+    
 
 
+       
 
-
-<%@current_client.request_services.map do |request_service| %>
+    <h2 class= 'text-center'> Cases you have request assistance with </h2>
+    <%@current_client.request_services.map do |request_service| %>
     <% if request_service.request_jobs.count == 0 %>
-        Service: <%= link_to request_service.service.title, request_service_path(request_service) %> <br>
-        You want this service to start on: <%= request_service.starting_date %><br>
-        Hours requested for the service: <%= request_service.hours %> / a week <br>
-        Comments for the agency: <%= request_service.comments %> <br><br> <br>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Service:</th>
+          <td><%= link_to request_service.service.title, request_service_path(request_service) %></td>
+        </tr>
+        <tr>
+          <th scope="row">You want this service to start on:</th>
+          <td><%= request_service.starting_date %></td>
+        </tr>
+        <tr>
+          <th scope="row">Hours requested for the service:</th>
+          <td> <%= request_service.hours %> / a week </td>
+        </tr>
+        <tr>
+          <th scope="row">Comments for the agency:</th>
+          <td><%= request_service.comments %></td>
+        </tr>
+          <tr>
+          </tr>
+      </tbody>
     <% end %>
+    <tr>
+    </tr>
+</table>
+
    
 <% end %>
 
-<br><br>
+<br><br><br>
 
-<% if @current_client.request_jobs.count > 0 %>
-    Services you are enrolled in <br><br>
 
-        <% @current_client.request_jobs.map do |service_info|  %>
-            Service granted: <%=  service_info.request_service.service.title %> <br> 
-            Aide: <%= service_info.aide.first_name %>  <%= service_info.aide.last_name %> <br>
-            Aide - Email: <%= service_info.aide.email %> <br>
-            Aide - Phone: <%= service_info.aide.phone %> <br>
-            Location: <%= service_info.location %> <br>
-            Starting on: <%= service_info.starting_date %> <br>
-            Hours granted: <%= service_info.hours %> a week <br><br>
-        <%end %>
-    <br><br><br><br>
+
+<table class="table table-striped table-dark">
+ <% if @current_client.request_jobs.count > 0 %>
+            <% @current_client.request_jobs.map do |service_info|  %>
+
+  <h2 class= 'text-center'> Services you are enrolled in</h2> <br>
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"> Service granted:</th>
+          <td><%=  service_info.request_service.service.title %> </td>
+        </tr>
+        <tr>
+          <th scope="row">Aide:</th>
+          <td><%= service_info.aide.first_name %>  <%= service_info.aide.last_name %> </td>
+        </tr>
+        <tr>
+          <th scope="row">Aide - Email:</th>
+          <td> <%= service_info.aide.email %></td>
+        </tr>
+        <tr>
+          <th scope="row">Aide - Phone:</th>
+          <td><%= service_info.aide.phone %> </td>
+        </tr>
+        <tr>
+          <th scope="row">Location:</th>
+          <td><%= service_info.location %> </td>
+        </tr>
+        <th scope="row">Starting on:</th>
+          <td><%= service_info.starting_date %></td>
+        </tr>
+        <th scope="row">Hours granted:</th>
+          <td><%= service_info.hours %> a week</td>
+        </tr>
+        <tr>
+      </tr>
+  </tbody>
+  <% end %>
+    <tr>
+    </tr>
+</table>
 <% end %>
+<br><br> <br> <br>
+
+<%= link_to "Apply to Services" ,services_path, :class => "btn btn-success center" %>
+<br><br> <br> <br>
 
 
-<%= link_to "Apply to Services" , services_path %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

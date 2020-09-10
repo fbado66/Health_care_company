@@ -1,16 +1,33 @@
-<h1> You are in Contract Show </h1>
+<div class="container">
+
 
  Hello <%= @contract.aide.first_name %> <%= @contract.aide.last_name %>, <br><br>
  What would you like to do Regarding this job you have applied for? <br><br>
 
-Service: <%= @contract.service.title %> <br>
-Date you can start: <%= @contract.availability_to_start %> <br>
-Pay rate you are looking for: $ <%= @contract.pay_rate %>/hr <br><br>
+ <div class="card" style="width: 28rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= @contract.service.title %> </h5>
+        <p class="card-text"><%= @contract.service.content_2 %> <br>
+        <p class="card-text"><%= @contract.service.salary_content %> <br>
 
 
-<%= link_to "Delete", @contract, :method => :delete %> <br> <br>
-<%= link_to "EDIT", edit_contract_path(@contract) %> <br>
+    <p class="card-text">Date you can start: <%= @contract.availability_to_start %> <br>
+    <p class="card-text">Pay rate: $ <%= @contract.pay_rate %>/hr <br><br>
+<br>
+
+</p>
+<%= link_to "EDIT", edit_contract_path(@contract), :class => "btn btn-success" %> <br>
+<br>
+    <%= link_to "Delete", @contract, :method => :delete, :class => "btn btn-danger" %> <br> <br>
+
+  </div>
+</div>
+
+
+
 
 
 <br> <br>
-<%= link_to "RETURN TO MY PROFILE", profile_path %>
+<%= link_to "RETURN TO MY PROFILE", profile_path, :class => "btn btn-info" %>
+
+</div>

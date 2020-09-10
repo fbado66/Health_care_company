@@ -1,34 +1,55 @@
-<h1> You are in the request_job new</h1>
+
+<div class="container">
+<h3> Facilitating a service and job in one place, IGOR CARE</h3><br>
+
+<img src="https://info.vitalworklife.com/hubfs/Imported_Blog_Media/iStock_000027044996_Small-3.jpg"> <br><br>
+
+    <%= form_for @request_job do |f| %>
+      <%= f.label :request_service_id, "Client and Service" %> 
+        <%= f.collection_select :request_service_id, @request_services, :id, :label_for_collect_client %> <br>    
+      <%= f.label :aide_id %>
+      <%= f.collection_select :aide_id, @aides, :id, :full_name_and_contract_info %><br/>
+      <%= f.label :pay_rate %>
+        <%= f.number_field :pay_rate %><br/>
+      <%= f.label :hours, "Hours granted for this case" %>
+      <%= f.number_field :hours %><br>
+      <%= f.label :starting_date %>
+      <%= f.date_select :starting_date %><br/>
+      <%= f.label :comments, "Guidelines for this case" %><br>
+      <%= f.text_area :comments %><br>
+
+      <%= f.label :location %>
+      <%= f.select :location, options_for_select(["Brooklyn", "Queens", "Bronx", "Jamaica", "Manhattan", "Long Island"]) %><br/>
+      
+      <%= f.submit "Ready!", :class => "btn btn-success" %>
+    <% end %>
+
+    <br><br>
+
+<h4 class=text-center> Helper guide</h4> <br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Aide</th>
+      <th scope="col">Contract</th>
+      <th scope="col">Certifications</th>
+      <th scope="col">Pay Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+      <%  @contract.map do |contract| %>
+    <tr>
+      <th scope="row"><%= contract.aide.first_name %> <%= contract.aide.last_name %></th>
+      <td><%= contract.title %></td>
+      <td><%= contract.aide.certifications %></td>
+      <td>$<%= contract.pay_rate %> hr</td>
+    </tr>
+    <% end%>
+  </tbody>
+</table>
 
 
+    
 
-<%= form_for @request_job do |f| %>
-  <%= f.label :request_service_id, "Client and Service" %> 
-    <%= f.collection_select :request_service_id, @request_services, :id, :label_for_collect_client %> <br>
-
-  
-  <%= f.label :aide_id %>
-  <%= f.collection_select :aide_id, @aides, :id, :full_name_and_contract_info %><br/>
-  <%= f.label :pay_rate %><br>
-    <%= f.number_field :pay_rate %><br/>
-
-  <%= f.label :hours, "Hours granted for this case" %><br>
-  <%= f.number_field :hours %><br>
-  <%= f.label :starting_date %>
-  <%= f.date_select :starting_date %><br/>
-   <%= f.label :comments, "Guidelines for this case" %><br>
-  <%= f.text_field :comments %><br>
-
-  <%= f.label :location %>
-  <%= f.select :location, options_for_select(["Brooklyn", "Queens", "Bronx", "Jamaica", "Manhattan", "Long Island"]) %><br/>
-  
-  <%= f.submit "Ready!" %>
-<% end %>
-
-<br><br>
-
-
-Helper Guide <br><br>
-<%  @contract.map do |contract| %>
-Aide: <%= contract.aide.first_name %> - Contract: <%= contract.title %> - Certifications: <%= contract.aide.certifications %> - Pay_rate: $<%= contract.pay_rate %> hr<br>
-<% end %>
+    </div>

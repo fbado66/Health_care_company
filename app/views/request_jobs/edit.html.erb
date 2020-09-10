@@ -1,27 +1,30 @@
-<h1> You are in the request_job edit</h1>
 
 
+<div class="container">
+<h3> Personalizing even more with IGOR CARE</h3><br>
 
-<%= form_for @request_job do |f| %>
-  <%= f.label :request_service_id, "Client and Service" %> 
-    <%= f.collection_select :request_service_id, @request_services, :id, :client_id %> <br>
+<img src="https://www.haymsalomonhome.com/wp-content/uploads/2018/10/subacute-nursing-care-haymsalomonhome.jpg"> <br><br>
 
-  
-  <%= f.label :aide_id %>
-  <%= f.collection_select :aide_id, @aides, :id, :first_name %><br/>
-  <%= f.label :pay_rate %><br>
-    <%= f.number_field :pay_rate %><br/>
+    <%= form_for @request_job do |f| %>
+      <%= f.label :request_service_id, "Client and Service" %> 
+        <%= f.collection_select :request_service_id, @request_services, :id, :label_for_collect_client %> <br>    
+      <%= f.label :aide_id %>
+      <%= f.collection_select :aide_id, @aides, :id, :full_name_and_contract_info %><br/>
+      <%= f.label :pay_rate %>
+        <%= f.number_field :pay_rate %><br/>
+      <%= f.label :hours, "Hours granted for this case" %>
+      <%= f.number_field :hours %><br>
+      <%= f.label :starting_date %>
+      <%= f.date_select :starting_date %><br/>
+      <%= f.label :comments, "Guidelines for this case" %><br>
+      <%= f.text_area :comments %><br>
 
-  <%= f.label :hours, "Hours granted for this case" %><br>
-  <%= f.number_field :hours %><br>
-  <%= f.label :starting_date %>
-  <%= f.date_select :starting_date %><br/>
-   <%= f.label :comments, "Guidelines for this case" %><br>
-  <%= f.text_field :comments %><br>
+      <%= f.label :location %>
+      <%= f.select :location, options_for_select(["Brooklyn", "Queens", "Bronx", "Jamaica", "Manhattan", "Long Island"]) %><br/>
+      
+      <%= f.submit "DONE!", :class => "btn btn-success" %>
+    <% end %>
 
-  <%= f.label :location %>
-  <%= f.select :location, options_for_select(["Brooklyn", "Queens", "Bronx", "Jamaica", "Manhattan", "Long Island"]) %><br/>
-  
-  <%= f.submit "Ready!" %>
-<% end %>
+    <br><br>
 
+    </div>

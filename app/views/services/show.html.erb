@@ -1,27 +1,30 @@
-<h1> You are in the show for services view</h1>
+<div class="container">
 
-<% if @current_aide %>
-    Welcome <%= "#{@current_aide.first_name}" %><br>
-    Thanks for your interested in applying to our <%= @service.title %> position <br><br>
-    <%= @service.sub_title %>  <br>
-    As a <%=@service.title %> You will provide the following service <br>
-    <%=@service.content_2 %> <br><br><br>
-    Your work Schedule <br>
-    <%=@service.work_schedule %><br> 
-    Salary: <br>
-    <%=@service.salary_content %><br><br>
-    To qualified for this position, please make sure you can do the following <br>
-    <%= @service.skills %><br><br><br>
+    <h1 class= text-center> Come Join the Family</h1><br><br>
+        <% if @current_aide %>
 
-    <%= link_to "Aide Apply now", new_contract_path %>
+            <div class="card">
+            <img src="https://phoenixhomehc.com/wp-content/uploads/DSC_9778-1024x684.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center display-4"><%= @service.sub_title %> </h5><br>
+                        <h5 class="card-title text-center">As a <%=@service.title %> You will provide the following service </h5><br>
+                        <h1 class="card-title text-center h5"><%=@service.content_2 %> <br> </h1><br><br>
+                        <h5 class="card-title text-center">Your work Schedule </h5><br>
+                        <h1 class="card-title text-center h5"><%=@service.work_schedule %><br>  </h1><br>
+                        <h5 class="card-title text-center">Salary </h5><br>
+                        <h1 class="card-title text-center h5"><%=@service.salary_content %><br>  </h1><br>
+                        <h5 class="card-title text-center">To qualified for this position, please make sure you can do the following</h5><br>
+                        <h1 class="card-title text-center h5"> <%= @service.skills %><br>  </h1><br>
+                        <p class="card-text">Thanks for your interest in applying to our <%= @service.title %> position, <%= "#{@current_aide.first_name}" %> </p>
+                        <%= link_to "Join the Family Today", new_contract_path, :class => "btn btn-primary btn-lg"%>
+                    </div>
+            </div>   
+        <% end %>
 
-<% end %>
-
-
-
-<br><br>
-<% if @current_client %>
-<%= link_to "Apply now", new_request_service_path %>
-<% elsif @current_admin%>
-Hello Admin
-<% end %>
+    <br><br>
+        <% if @current_client %>
+            <%= link_to "Apply now", new_request_service_path, :class => "btn btn-primary btn-lg" %>
+        <% elsif @current_admin%>
+            Hello Admin
+        <% end %>
+</div>

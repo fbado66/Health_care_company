@@ -1,53 +1,109 @@
-<h1> Profile for Aide</h1>
+<div class="container">
+    <h2> Welcome to your Igor Space <%= @current_aide.first_name %> </h2>
+    <br><br>
+    
 
-Name: <%= @current_aide.first_name %> <%= @current_aide.last_name %><br/>
-Email: <%= @current_aide.email %><br/>
-Phone: <%= @current_aide.phone %><br/>
-Age: <%= @current_aide.age %><br/>
-Location I can work on: <%= @current_aide.town_you_can_work %><br/>
-Certifications: <%= @current_aide.certifications %><br/>
-Member since: <%= @current_aide.created_at.strftime('%F') %><br/><br>
+    <div class="card" style="width: 28rem;">
+    <p class= 'text-center'> Your Profile</p>
+        <img src="https://i1.sndcdn.com/avatars-000316683055-pz96wm-t500x500.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text"> <strong> Name:</strong> <%= @current_aide.first_name %> <%= @current_aide.last_name %><br/>
+          <p class="card-text"> <strong> Email:</strong> <%= @current_aide.email %><br/>
+          <p class="card-text"> <strong> Phone: </strong> <%= @current_aide.phone %><br/>
+          <p class="card-text"> <strong> Age:</strong> <%= @current_aide.age %> years old <br/>
+          <p class="card-text"> <strong> Locations I can work:</strong> <%= @current_aide.town_you_can_work %><br/>
+          <p class="card-text"> <strong> Certifications:</strong> <%= @current_aide.certifications %><br/>
+          <p class="card-text"> <strong> Member since:</strong> <%= @current_aide.created_at.strftime('%F') %><br/><br>
+          </p>
+        </div>
+        <%= link_to "Adjust my Account", edit_aide_path(@current_aide), :class => 'btn btn-secondary' %> <br>
+    </div>
 
-<%= link_to "Adjust my Account", edit_aide_path(@current_aide) %> <br>
-
-<hr>
-
-
-<br>
-        JOBS I HAVE APPLIED TO<br><br>
-
-
-   <% @current_aide.contracts.map do |contract| %>
-
-    Service: <%= link_to contract.service.title, contract_path(contract)%> <br>
-     Title: <%= contract.title %><br>
-   My availablity to Start: <%= contract.availability_to_start %><br>
-   Pay Rate I am looking for: $ <%= contract.pay_rate %>/hr<br>
-       <br> <br>
-
-   <% end %>
-          
-  
-       
+    <br><br><br>
 
 
- 
 
- <br><br> <br> 
- Here are the cases you are working with <br><br>
+    <h2 class= 'text-center'> Applications Submitted</h2>
+      <table class="table table-striped">
+      <% @current_aide.contracts.map do |contract| %>
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Service:</th>
+          <td><%= link_to contract.service.title, contract_path(contract)%></td>
+        </tr>
+        <tr>
+          <th scope="row">Title:</th>
+          <td><%= contract.title %></td>
+        </tr>
+        <tr>
+          <th scope="row">My availablity to Start</th>
+          <td> <%= contract.availability_to_start %></td>
+        </tr>
+        <tr>
+          <th scope="row">Pay Rate I am looking for</th>
+          <td>$ <%= contract.pay_rate %>/ hr</td>
+        </tr>
+          <tr>
+          </tr>
+      </tbody>
+    <% end %>
+    <tr>
+    </tr>
+</table>
 
- <% @current_aide.request_jobs.map do |cases| %>
- Location: <%= cases.location %> <br>
-Starting Date: <%= cases.starting_date%> <br>
- Pay Rate: $ <%= cases.pay_rate %> hourly<br>
-Hours granted for this case: <%= cases.hours %> a week <br>
- Client: <%= cases.request_service.client.first_name %> <%= cases.request_service.client.last_name %> <br>
- Client's Phone: <%= cases.request_service.client.phone %><br><br>
+<br><br><br>
 
- <% end %>
+  <h2 class= 'text-center'> Here are the cases you are working with</h2> <br>
 
-  <br><br> <br> 
+<table class="table table-striped table-dark">
+  <% @current_aide.request_jobs.map do |cases| %>
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Location:</th>
+          <td><%= cases.location %> </td>
+        </tr>
+        <tr>
+          <th scope="row">Starting Date:</th>
+          <td><%= cases.starting_date%> </td>
+        </tr>
+        <tr>
+          <th scope="row">Pay Rate: $</th>
+          <td> $ <%= cases.pay_rate %> hourly</td>
+        </tr>
+        <tr>
+          <th scope="row">Hours granted for this case:</th>
+          <td><%= cases.hours %> a week </td>
+        </tr>
+        <tr>
+          <th scope="row">Client:</th>
+          <td><%= cases.request_service.client.first_name %> <%= cases.request_service.client.last_name %> </td>
+        </tr>
+        <th scope="row">Client's Phone:</th>
+          <td><%= cases.request_service.client.phone %></td>
+        </tr>
+        <tr>
+      </tr>
+  </tbody>
+  <% end %>
+    <tr>
+    </tr>
+</table>
+<br><br> <br> <br>
 
-<br>
+<%= link_to "Apply to Services" , jobs_path, :class => "btn btn-success center" %>
+<br><br> <br> <br>
 
-<%= link_to "Apply to Services" , services_path %>
+
+</div>
