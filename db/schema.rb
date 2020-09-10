@@ -102,6 +102,8 @@ ActiveRecord::Schema.define(version: 2020_09_04_212640) do
     t.string "work_schedule"
     t.string "salary_content"
     t.string "skills"
+    t.string "image_url_1"
+    t.string "image_url_2"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

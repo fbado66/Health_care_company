@@ -24,7 +24,32 @@
 </ul>
 
 
+<div class="container">
 
+    <div class="card-body">
+        <h1 class="card-title display-1 text-center">Join the Igor Care Family</h1> <br>
+        <p class="card-text h3 text-center ">Discover a rewarding career and live your commitment by joining the Igor Care family today</p>
+    </div>
+        <br><br>
+
+    <div class="row row-cols-1 row-cols-md-2">
+        <% @services.map do |service| %>
+            <div class="col mb-4">
+                <div class="card">
+                    <img src= <%= service.image_url_2 %> class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center h2"><%= service.title %></h5> <br>
+                            <h5 class="card-title text-center h4"><%= service.sub_title %></h5>
+
+                            <p class="card-text"><%= service.content_2 %></p> <br>
+
+                        </div>
+                    <%= link_to "START YOUR CAREER HERE", service_path(service), :class => "btn btn-primary btn-lg"%>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
 
 
 

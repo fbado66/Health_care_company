@@ -10,6 +10,9 @@ class CreateServices < ActiveRecord::Migration[6.0]
       t.string :work_schedule
       t.string :salary_content
       t.string :skills
+      t.string :image_url_1
+      t.string :image_url_2
+
 
       t.timestamps
     end
