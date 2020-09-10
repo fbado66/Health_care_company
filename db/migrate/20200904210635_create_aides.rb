@@ -9,7 +9,8 @@ class CreateAides < ActiveRecord::Migration[6.0]
       t.string :town_you_live_in   
       t.string :town_you_can_work   
       t.string :password_digest
-      t.string :certifications   
+      t.string :certifications 
+      t.integer :phone, :limit => 8  
       t.timestamps
     end
   end

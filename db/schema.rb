@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_09_04_212640) do
     t.string "town_you_can_work"
     t.string "password_digest"
     t.string "certifications"
+    t.bigint "phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_09_04_212640) do
     t.string "town_you_live_in"
     t.string "password_digest"
     t.string "preference_on_aides"
+    t.bigint "phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -2,12 +2,8 @@ class RequestServicesController < ApplicationController
     # helper_method :check_and_see_if_someone_is_logged_in_as_client?
     helper_method :check_and_see_if_someone_is_logged_in_as_client?
 
-
     before_action :authorized_to_see_page_client
     skip_before_action :authorized_to_see_page_client, only: [:index]
-
-
-
 
     def index 
         @request_services = RequestService.all 
@@ -36,7 +32,6 @@ class RequestServicesController < ApplicationController
         redirect_to request_service_path(@request_service)
     end 
 
-
     def create
         @current_client = Client.find_by(id: session[:client_id]) 
         # Attaching the client aspect to the @current_user
@@ -48,12 +43,14 @@ class RequestServicesController < ApplicationController
         @request_service = RequestService.find(params[:id])
         @request_service.destroy
         redirect_to my_profile_path
+    end
 
-      end
+    private
 
     def request_service_params
         params.require(:request_service).permit(:service_id, :client_id, :starting_date, :location, :hours, :comments)
     end 
+
 end
 
 

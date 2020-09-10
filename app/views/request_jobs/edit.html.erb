@@ -1,14 +1,14 @@
-<h1> You are in the request_job new</h1>
+<h1> You are in the request_job edit</h1>
 
 
 
 <%= form_for @request_job do |f| %>
   <%= f.label :request_service_id, "Client and Service" %> 
-    <%= f.collection_select :request_service_id, @request_services, :id, :label_for_collect_client %> <br>
+    <%= f.collection_select :request_service_id, @request_services, :id, :client_id %> <br>
 
   
   <%= f.label :aide_id %>
-  <%= f.collection_select :aide_id, @aides, :id, :full_name_and_contract_info %><br/>
+  <%= f.collection_select :aide_id, @aides, :id, :first_name %><br/>
   <%= f.label :pay_rate %><br>
     <%= f.number_field :pay_rate %><br/>
 
@@ -25,10 +25,3 @@
   <%= f.submit "Ready!" %>
 <% end %>
 
-<br><br>
-
-
-Helper Guide <br><br>
-<%  @contract.map do |contract| %>
-Aide: <%= contract.aide.first_name %> - Contract: <%= contract.title %> - Certifications: <%= contract.aide.certifications %> - Pay_rate: $<%= contract.pay_rate %> hr<br>
-<% end %>

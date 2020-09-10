@@ -17,7 +17,7 @@ class AidesController < ApplicationController
         if @aide && @aide.authenticate(params[:password])
         # If the aide is found AND their password matches
         session[:aide_id] = @aide.id
-        redirect_to aide_path(@aide)
+        redirect_to profile_path
         else
         flash[:error] = "Incorrect username or password"
         redirect_to login_path
@@ -46,12 +46,22 @@ class AidesController < ApplicationController
         @aide = Aide.create(aide_params)
             if @aide.valid?
                 session[:aide_id] = @aide.id
-                redirect_to aide_path(@aide)
+                redirect_to profile_path
             else 
                 flash[:errors] = @aide.errors.full_messages
                 redirect_to new_aide_path
             end
     end
+
+    def edit 
+        @aide = Aide.find(params[:id])
+    end 
+
+    def update
+        @aide = Aide.find(params[:id])
+        @aide.update(aide_params)
+        redirect_to profile_path
+    end 
 
     private 
 
@@ -60,7 +70,7 @@ class AidesController < ApplicationController
     end
 
     def aide_params
-        params.require(:aide).permit(:first_name, :last_name, :email, :age, :gender, :town_you_live_in, :town_you_can_work, :certifications, :password)
+        params.require(:aide).permit(:first_name, :last_name, :email, :age, :gender, :town_you_live_in, :town_you_can_work, :certifications, :password, :phone)
     end 
 
 end

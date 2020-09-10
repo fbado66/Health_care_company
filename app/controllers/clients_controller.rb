@@ -4,13 +4,12 @@ class ClientsController < ApplicationController
 
     skip_before_action :authorized_to_see_page_client, only: [:login, :handle_login, :new, :create]
 
-    
-
     def login
         @error = flash[:error]
     end
 
     def my_profile
+
     end 
     
     def handle_login
@@ -18,7 +17,7 @@ class ClientsController < ApplicationController
         if @client && @client.authenticate(params[:password])
         # If the client is found AND their password matches
         session[:client_id] = @client.id
-        redirect_to client_path(@client)
+        redirect_to my_profile_path
         else
         flash[:error] = "Incorrect username or password"
         redirect_to login_2_path
@@ -50,11 +49,27 @@ class ClientsController < ApplicationController
         @client = Client.create(client_params)
           if @client.valid?
             session[:client_id] = @client.id
-            redirect_to client_path(@client)
+            redirect_to my_profile_path
           else 
             flash[:errors] = @client.errors.full_messages
             redirect_to new_client_path
           end
+        end
+
+        def edit 
+            @client = Client.find(params[:id])
+        end 
+
+        def update
+            @client = Client.find(params[:id])
+            @client.update(client_params)
+            redirect_to my_profile_path
+        end 
+
+        def destroy
+            @client = Client.find(params[:id])
+            @client.destroy
+            redirect_to services_path
         end
 
     private 
@@ -64,7 +79,7 @@ class ClientsController < ApplicationController
       end
 
     def client_params
-        params.require(:client).permit(:first_name, :last_name, :email, :age, :gender, :town_you_live_in, :preference_on_aides, :password)
+        params.require(:client).permit(:first_name, :last_name, :email, :age, :gender, :town_you_live_in, :preference_on_aides, :password, :phone)
     end 
 end
 

@@ -46,7 +46,7 @@ class AdminsController < ApplicationController
       @admin = Admin.create(admin_params)
         if @admin.valid?
           session[:admin_id] = @admin.id
-          redirect_to admin_path(@admin)
+          redirect_to admin_profile_path
         else 
           flash[:errors] = @admin.errors.full_messages
           redirect_to new_admin_path
@@ -59,7 +59,6 @@ class AdminsController < ApplicationController
       @admin = Admin.find(params[:id])
     end
 
-    
     def admin_params
       params.require(:admin).permit(:first_name, :last_name, :email, :password)
     end 

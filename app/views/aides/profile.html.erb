@@ -1,21 +1,53 @@
 <h1> Profile for Aide</h1>
 
-<%= @current_aide.first_name %>
-<%= @current_aide.last_name %><br/>
-<br>
+Name: <%= @current_aide.first_name %> <%= @current_aide.last_name %><br/>
+Email: <%= @current_aide.email %><br/>
+Phone: <%= @current_aide.phone %><br/>
+Age: <%= @current_aide.age %><br/>
+Location I can work on: <%= @current_aide.town_you_can_work %><br/>
+Certifications: <%= @current_aide.certifications %><br/>
+Member since: <%= @current_aide.created_at.strftime('%F') %><br/><br>
 
-JOBS I HAVE APPLIED TO<br><br>
-   <%@current_aide.contracts.map do |contract| %>
-     Title: <%= contract.title %><br>
+<%= link_to "Adjust my Account", edit_aide_path(@current_aide) %> <br>
+
+<hr>
+
+
+<br>
+        JOBS I HAVE APPLIED TO<br><br>
+
+
+   <% @current_aide.contracts.map do |contract| %>
+
     Service: <%= link_to contract.service.title, contract_path(contract)%> <br>
+     Title: <%= contract.title %><br>
    My availablity to Start: <%= contract.availability_to_start %><br>
    Pay Rate I am looking for: $ <%= contract.pay_rate %>/hr<br>
        <br> <br>
 
    <% end %>
- 
+          
+  
+       
+
 
  
+
+ <br><br> <br> 
+ Here are the cases you are working with <br><br>
+
+ <% @current_aide.request_jobs.map do |cases| %>
+ Location: <%= cases.location %> <br>
+Starting Date: <%= cases.starting_date%> <br>
+ Pay Rate: $ <%= cases.pay_rate %> hourly<br>
+Hours granted for this case: <%= cases.hours %> a week <br>
+ Client: <%= cases.request_service.client.first_name %> <%= cases.request_service.client.last_name %> <br>
+ Client's Phone: <%= cases.request_service.client.phone %><br><br>
+
+ <% end %>
+
+  <br><br> <br> 
+
 <br>
 
 <%= link_to "Apply to Services" , services_path %>

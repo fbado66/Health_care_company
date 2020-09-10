@@ -9,6 +9,7 @@ class CreateClients < ActiveRecord::Migration[6.0]
       t.string :town_you_live_in
       t.string :password_digest
       t.string :preference_on_aides
+      t.integer :phone, :limit => 8  
       t.timestamps
     end
   end

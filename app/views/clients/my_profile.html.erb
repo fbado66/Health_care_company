@@ -1,33 +1,56 @@
 <h1> You are in the profile view for client</h1>
 
 <h1> Welcome </h1>
-Hello 
-<%= @current_client.first_name %> <%= @current_client.last_name %><br/>
+
+Hello <%= @current_client.first_name %> <%= @current_client.last_name %><br/>
 
 Here is a little info about you<br><br>
+Phone: <%= @current_client.phone %><br>
 Your town: <%= @current_client.town_you_live_in%><br>
 Age: <%= @current_client.age %><br>
+You prefer to work with <%= @current_client.preference_on_aides %> aides <br>
 Notification and important news are being sent at: <%= @current_client.email %><br>
+
+<%= link_to "Adjust my Account", edit_client_path(@current_client) %> <br>
+
+
+<hr>
 
 
 <br>
 
    Cases you have request assistance with <br>
 
-   <%@current_client.request_services.map do |request_service| %>
-   Service: <%= link_to request_service.service.title, request_service_path(request_service) %> <br>
-   You want this service to start on: <%= request_service.starting_date %><br>
-   Hours requested for the service: <%= request_service.hours %> / a week <br>
-   Comments for the agency: <%= request_service.comments %> <br>
 
-       <br> <br>
 
-   <% end %>
+
+<%@current_client.request_services.map do |request_service| %>
+    <% if request_service.request_jobs.count == 0 %>
+        Service: <%= link_to request_service.service.title, request_service_path(request_service) %> <br>
+        You want this service to start on: <%= request_service.starting_date %><br>
+        Hours requested for the service: <%= request_service.hours %> / a week <br>
+        Comments for the agency: <%= request_service.comments %> <br><br> <br>
+    <% end %>
    
- 
+<% end %>
 
- 
-<br>
+<br><br>
+
+<% if @current_client.request_jobs.count > 0 %>
+    Services you are enrolled in <br><br>
+
+        <% @current_client.request_jobs.map do |service_info|  %>
+            Service granted: <%=  service_info.request_service.service.title %> <br> 
+            Aide: <%= service_info.aide.first_name %>  <%= service_info.aide.last_name %> <br>
+            Aide - Email: <%= service_info.aide.email %> <br>
+            Aide - Phone: <%= service_info.aide.phone %> <br>
+            Location: <%= service_info.location %> <br>
+            Starting on: <%= service_info.starting_date %> <br>
+            Hours granted: <%= service_info.hours %> a week <br><br>
+        <%end %>
+    <br><br><br><br>
+<% end %>
+
 
 <%= link_to "Apply to Services" , services_path %>
 

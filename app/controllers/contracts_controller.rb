@@ -32,8 +32,6 @@ class ContractsController < ApplicationController
         redirect_to contract_path(@contract)
     end 
 
-
-
     def create
         @current_aide = Aide.find_by(id: session[:aide_id]) 
         @contract = @current_aide.contracts.create(contract_params)

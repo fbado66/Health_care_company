@@ -5,7 +5,6 @@ class ServicesController < ApplicationController
    # before_action :authorized_to_see_page_client
    # skip_before_action :authorized_to_see_page_client, only: [:index]
 
-
    before_action :authorized_to_see_page_aide
    skip_before_action :authorized_to_see_page_aide, only: [:index, :job]
    
@@ -57,6 +56,8 @@ class ServicesController < ApplicationController
         redirect_to service_path(@service)
      end 
 
+     private 
+     
      def service_params
         params.require(:service).permit(:title, :content, :skills)
      end 

@@ -1,6 +1,19 @@
 <h1> You are viewing the request_job show view</h1>
 
+Service : <%=@request_job.request_service.service.title %><br>
 Aide: <%= @request_job.aide.first_name %><br>
-Client <%= @request_job.request_service.client.first_name %><br>
+Client:  <%= @request_job.request_service.client.first_name %><br>
+Client's Location: <%=@request_job.request_service.client.town_you_live_in %> <br>
+Client prefers to work with <%=@request_job.request_service.client.preference_on_aides %> aides <br>
+Pay Rate for Aide: $ <%=@request_job.pay_rate %> / Hour <br>
+Hours granted for this case : <%=@request_job.hours %> / weekly<br>
+Case Starting services on: <%= @request_job.starting_date %> <br>
+Comments for this case: <%=@request_job.comments %>
 
-<%= @request_job.starting_date %>
+<br><br><br>
+<%= link_to "CANCEL SERVICES", @request_job, :method => :delete %><br> <br>
+<%= link_to "EDIT", edit_request_job_path(@request_job) %> <br>
+
+
+<br> <br>
+<%= link_to "GO BACK TO PROFILE", admin_profile_path %>

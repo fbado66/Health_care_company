@@ -3,10 +3,10 @@
 
 <%= form_for @contract do |f| %>
 
-  <%= f.label :title, "I would like to sign up for this service"  %>
-  <%= f.text_field :title %><br>
   <%= f.label :service_id %>
   <%= f.collection_select :service_id, @services, :id, :title %><br/>
+  <%= f.label :title, "Let's give it an unique title for you to remember it"  %>
+  <%= f.text_field :title %><br>
   <%= f.label :availability_to_start, "Where can You start Working"  %>
   <%= f.date_select :availability_to_start  %><br/>
   <%= f.label :pay_rate ,"What is the pay-rate you are looking for" %>
