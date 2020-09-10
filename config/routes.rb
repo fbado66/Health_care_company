@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root to: 'services#index'
+
   resources :users
   resources :contracts
   resources :request_jobs

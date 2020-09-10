@@ -53,6 +53,6 @@ private_care = Service.create(title: "Private Care",
     Arrange services for legal and financial advisers, Coordinate and attend medical appointments",
     work_schedule: "You get to control your own hours, and the borough you want to work, we have cases in Bronx, Brooklyn, Queens, Manhattan, Staten Island, Westchester County, Suffolk County, and Nassau County. ",
     salary_content: "We will try our best to get you the highest rate possible, Once you have 3 months completed with us, we offer a great package of benefits including Medicaid-plan for you as well as PTO. ",
-    skills: "Currently licensed in the State of NY @ Confortable traveling to patient's home with personal vehicle @ Time Managments Skills @ Detail Oriented @ Interpersonal Skills",
+    skills: "Currently licensed in the State of NY Confortable traveling to patient's home with personal vehicle @ Time Managments Skills @ Detail Oriented @ Interpersonal Skills",
     image_url_1: "https://www.privatecare.org/wp-content/uploads/2018/06/ING_33594_120788-min.jpg",
     image_url_2: "http://www.simpleimageresizer.com/_uploads/photos/d3be5c46/lunch-red_1_800x600.jpg")
