@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'services#index'
+  root to: 'users#homepage'
 
   resources :users
   resources :contracts
