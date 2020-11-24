@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   root to: 'users#homepage'
 
-  resources :users
   resources :contracts
   resources :request_jobs
   resources :request_services
@@ -11,8 +10,12 @@ Rails.application.routes.draw do
   resources :clients
   resources :aides
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-# SERVICES 
 
+  # AboutPage 
+  get '/about', to: "users#about"
+
+
+# SERVICES 
 get "/careers/:id", to: "services#career", as: 'career_path'
 
 
