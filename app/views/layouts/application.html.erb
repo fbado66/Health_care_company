@@ -4,6 +4,11 @@
     <title>HealthCareAgency</title>
       <%= csrf_meta_tags %>
       <%= csp_meta_tag %>
+
+      <%# Google Fonts %>
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Della+Respira&family=IM+Fell+English&display=swap" rel="stylesheet">
+
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
       <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -11,7 +16,6 @@
 
   <body>
 
-  <div class="shadow-sm p-3 mb-5 bg-white rounded">Small shadow</div>
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -21,16 +25,16 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item active ">
-            <a class='nav-link shadow-sm white rounded' href='/'>Home</a>
+            <a class='nav-link ' href='/'>Home</a>
           </li>
           <li class="nav-item">
-            <a class='nav-link' href='/about' >About</a>
+            <a class='nav-link ' href='/about' >About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/services">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href='/' > IGOR CARE</a>
+            <a class="nav-link" href='/' ><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ8RtuO_70AQoPgg62TjUKraxYjcbgD7ge6g&usqp=CAU'></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/jobs">Careers</a>
@@ -94,6 +98,7 @@
         </div>
       </div>
     </div>
+
 
     <%= yield %>
 

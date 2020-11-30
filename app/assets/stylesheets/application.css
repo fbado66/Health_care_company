@@ -14,7 +14,9 @@
  *= require_self
  */
 
-
+body {
+    font-family: 'Della Respira', 'IM Fell English', serif; 
+}
 
  .navbar-nav {
      margin: 10px 0px!important
@@ -38,5 +40,12 @@
 
 .sections {
 padding: 5% 0;
+}
+
+.home_header {
+    text-align: center;
+    font-size: 3.5rem;
+    line-height: 1.5;
+    font-weight: 400;
 }
 
