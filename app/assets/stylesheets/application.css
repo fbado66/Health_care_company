@@ -16,6 +16,10 @@
 
 body {
     font-family: 'Della Respira', 'IM Fell English', serif; 
+    text-align: center;
+    font-size: 18px;
+    line-height: 32px;
+
 }
 
  .navbar-nav {
@@ -42,10 +46,26 @@ body {
 padding: 5% 0;
 }
 
+
+.home-alignment {
+    text-align: center;
+    font-size: 18px;
+}
+
 .home_header {
     text-align: center;
     font-size: 3.5rem;
     line-height: 1.5;
     font-weight: 400;
+    margin-top: 80px;
 }
 
+#together-img {
+    width: 20%;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.sub-text {
+   margin: 4% 10%;
+}
