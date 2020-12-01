@@ -102,3 +102,18 @@ padding: 3% 0;
     width: 60%;
     border-radius: 10px;
 }
+
+#card {
+    padding: 0 12%;
+    border: none!important;
+    margin-bottom: 100px;
+}
+
+#btn-design {
+    padding: 5px 100px;
+    margin: 0 auto;
+}
+
+#img-card {
+    border-radius: 15px;
+}
