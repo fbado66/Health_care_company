@@ -44,7 +44,7 @@ body {
 }
 
 .sections {
-padding: 5% 0;
+padding: 3% 0;
 }
 
 
@@ -90,4 +90,15 @@ padding: 5% 0;
 
 #paragraph {
     padding: 6% 0;
+}
+
+#heroes-home-img {
+    width: 80%;
+    border-radius: 10px;
+}
+
+#office-workers-img {
+    margin-top: 2%;
+    width: 60%;
+    border-radius: 10px;
 }
