@@ -1,7 +1,7 @@
 <div class="container">
     <div class="card-body">
-        <h1 class="card-title display-1 text-center">All in Service of Family</h1> <br>
-        <p class="card-text h3 text-center ">Comprehensive in-home assistance designed to excel every individuals, unique care</p>
+        <h1 class="card-title text-center">All in Service of Family</h1> <br>
+        <p class="card-text h4 text-center ">Comprehensive in-home assistance designed to excel every individuals, unique care</p>
     </div>
         <br><br>
         <% if @current_client %> 
@@ -9,9 +9,9 @@
                 <% @services.map do |service| %>
                     <div class="col mb-4">
                         <div class="card">
-                            <img src= <%= service.image_url_1 %> class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title text-center h2"><%= service.title %></h5>
+                                    <img src= <%= service.image_url_1 %> class="card-img-top" alt="...">
                                     <p class="card-text"><%= service.content_1 %></p>
                                     <h5 class="card-title text-center h5">We offer you ..</h5>
                                     <p class="card-text"><%= service.responsabilities %></p>
@@ -25,9 +25,9 @@
                 <% @services.map do |service| %>
                     <div class="col mb-4">
                         <div class="card">
-                            <img src= <%= service.image_url_1 %> class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title text-center h2"><%= service.title %></h5>
+                                    <img src= <%= service.image_url_1 %> class="card-img-top" alt="...">
                                     <p class="card-text"><%= service.content_1 %></p>
                                 </div>
                             <%= link_to "EXPLORE", new_client_path, :class => "btn btn-primary btn-lg"%>

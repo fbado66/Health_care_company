@@ -13,7 +13,7 @@ hha = Service.create(title:"Home Health Aides ", sub_title:"What does a Home Hea
     salary_content: " A home health aide's salary varies based on the level of experience, geographical location, and other factors. Come and work with us, we will get you the highest rate possibles.", 
     skills: "Home Health Aide Certification @ Interpersonal Skills @ Time Managments Skills @ Detail Oriented @ Physical Stamina", 
     image_url_1: "https://images.squarespace-cdn.com/content/565374ffe4b050a55d10b185/1490645196737-RT9RTI2OJIZWHOPZAY7X/becoming+a+home+health+aide.jpg?content-type=image%2Fjpeg",
-    image_url_2: "http://www.simpleimageresizer.com/_uploads/photos/d3be5c46/Home_Health_Care_800x600.jpg")  
+    image_url_2: "https://images.unsplash.com/photo-1590105577767-e21a1067899f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1400&q=80")  
 
 cdpap = Service.create(title:"CDPAP ", sub_title:"Get the help you need from someone you love", 
     content_1: "We are a contracted provider of CDPAP NY, a Consumer-Directed Personal Assistance Program that allows people to hire and manage their own caregiver. When you enroll in CDPAP with us, you get consistence care from a person who loves you.", 
@@ -27,7 +27,7 @@ cdpap = Service.create(title:"CDPAP ", sub_title:"Get the help you need from som
     salary_content: "We will try our best to get you the highest rate possible, Our pay-rate is highly competitive", 
     skills: "Be Patience @ Be friendly and care for your patient @ Interpersonal Skills @ Time Managments Skills @ Detail Oriented @ Physical Stamina", 
     image_url_1: "https://www.specialtouchhomecare.com/wp-content/uploads/2019/05/being-a-caregiver.jpg",
-    image_url_2: "http://www.simpleimageresizer.com/_uploads/photos/d3be5c46/home-care-services_800x600.jpg")  
+    image_url_2: "https://images.unsplash.com/photo-1582578598774-a377d4b32223?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80")  
 
 nursing_care = Service.create(title: "Nursing Care", 
     sub_title: "Is Nursing Care the right path for you? ", 
@@ -42,7 +42,7 @@ nursing_care = Service.create(title: "Nursing Care",
     salary_content: "We will try our best to get you the highest rate possible, Once you have 3 months completed with us, we offer a great package of benefits including Medicaid-plan for you as well as PTO. ",
     skills: "Currently licensed in the State of NY @ Confortable traveling to patient's home for visits with personal vehicle @ Home Care experience is a plus @ Love for the senior community", 
     image_url_1: "https://s3.amazonaws.com/utep-uploads/wp-content/uploads/bradley/2018/06/04143519/MaleNurses_Featured_Image.jpg",
-    image_url_2: "http://www.simpleimageresizer.com/_uploads/photos/d3be5c46/caregiver-talking-with-older-woman-166272537-5846b70b3df78c0230930869_800x600.jpg" ) 
+    image_url_2: "https://images.unsplash.com/photo-1538043224072-a1cb7a1122f4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1391&q=80" ) 
 
 private_care = Service.create(title: "Private Care", 
     sub_title: "Be the hero our community needs",
@@ -55,4 +55,4 @@ private_care = Service.create(title: "Private Care",
     salary_content: "We will try our best to get you the highest rate possible, Once you have 3 months completed with us, we offer a great package of benefits including Medicaid-plan for you as well as PTO. ",
     skills: "Currently licensed in the State of NY Confortable traveling to patient's home with personal vehicle @ Time Managments Skills @ Detail Oriented @ Interpersonal Skills",
     image_url_1: "https://www.privatecare.org/wp-content/uploads/2018/06/ING_33594_120788-min.jpg",
-    image_url_2: "http://www.simpleimageresizer.com/_uploads/photos/d3be5c46/lunch-red_1_800x600.jpg")
+    image_url_2: "https://images.unsplash.com/photo-1581594693690-517d9a71e1f2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1225&q=80")
