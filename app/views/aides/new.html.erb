@@ -1,35 +1,35 @@
 
-<div class="container">
+<div class="customized-container">
   <h1>Start Your Application now </h1><br>
 
-  <img src="https://scx2.b-cdn.net/gfx/news/2015/shouldthereb.jpg">
+  <img src="https://scx2.b-cdn.net/gfx/news/2015/shouldthereb.jpg" alt='new-aide' id='sign-up'>
   <br><br>
 
-<%= form_for @aide do |f| %>
-
-
-  <strong><%= f.label :first_name %></strong>
-  <%= f.text_field :first_name %> <br/>
-  <strong><%= f.label :last_name %>
-  <%= f.text_field :last_name %><br/></strong>
-  <strong><%= f.label :email %></strong>
-  <%= f.text_field :email %><br/>
-  <strong><%= f.label :phone %></strong>
-  <%= f.number_field :phone %><br/>
-  <strong><%= f.label :age %></strong>
-  <%= f.number_field :age %><br/>
-  <strong><%= f.label :gender %></strong>
-  <%= f.select :gender, options_for_select(["Male", "Female"]) %><br/>
-  <strong><%= f.label :town_you_live_in %></strong>
-  <%= f.select :town_you_live_in, options_for_select(["Brooklyn", "Queens", "Bronx", "Jamaica", "Manhattan", "Long Island"]) %><br/>
-  <strong><%= f.label :town_you_can_work %></strong>
-  <%= f.select :town_you_can_work, options_for_select(["Brooklyn", "Queens", "Bronx", "Jamaica", "Manhattan", "Long Island"]) %><br/>
-  <strong><%= f.label :certifications %></strong>
-  <%= f.select :certifications, options_for_select(["HHA Certification", "Nurse Certification", "HHA & Nurse Certification", "None"]) %><br/>
-  <strong><%= f.label :password %></strong>
-  <%= f.password_field :password %><br>
-  <%= f.submit "SIGN ME UP!", :class => "btn btn-success" %>
-<% end %>
+<div class='form'>
+  <%= form_for @aide do |f| %>
+    <strong><%= f.label :first_name %></strong>
+    <%= f.text_field :first_name %> <br/>
+    <strong><%= f.label :last_name %>
+    <%= f.text_field :last_name %><br/></strong>
+    <strong><%= f.label :email %></strong>
+    <%= f.text_field :email %><br/>
+    <strong><%= f.label :phone %></strong>
+    <%= f.number_field :phone %><br/>
+    <strong><%= f.label :age %></strong>
+    <%= f.number_field :age %><br/>
+    <strong><%= f.label :gender %></strong>
+    <%= f.select :gender, options_for_select(["Male", "Female"]) %><br/>
+    <strong><%= f.label :town_you_live_in %></strong>
+    <%= f.select :town_you_live_in, options_for_select(["Brooklyn", "Queens", "Bronx", "Jamaica", "Manhattan", "Long Island"]) %><br/>
+    <strong><%= f.label :town_you_can_work %></strong>
+    <%= f.select :town_you_can_work, options_for_select(["Brooklyn", "Queens", "Bronx", "Jamaica", "Manhattan", "Long Island"]) %><br/>
+    <strong><%= f.label :certifications %></strong>
+    <%= f.select :certifications, options_for_select(["HHA Certification", "Nurse Certification", "HHA & Nurse Certification", "None"]) %><br/>
+    <strong><%= f.label :password %></strong>
+    <%= f.password_field :password %><br>
+    <%= f.submit "SIGN ME UP!", :class => "btn btn-success", :id => 'submit' %>
+  <% end %>
+</div>
 
 </div>
 

@@ -1,34 +1,32 @@
-<div class="container">
+<div class="customized-container">
 
 <h1>Please join our Family </h1> <br>
 
-<img src= "https://www.ameribesthomecare.com/wp-content/uploads/2020/01/a-senior-woman-in-wheelchair-with-a-health-J3NF2EU.jpg"> 
+<img src= "https://www.ameribesthomecare.com/wp-content/uploads/2020/01/a-senior-woman-in-wheelchair-with-a-health-J3NF2EU.jpg" alt='new-clients' id='sign-up'> 
 <br><br>
 
-
-<%= form_for @client do |f| %>
-  
-  
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %> <br/>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %><br/>
-  <%= f.label :email %>
-  <%= f.text_field :email %><br/>
-  <%= f.label :phone %>
-  <%= f.number_field :phone %><br/>
-  <%= f.label :age %>
-  <%= f.number_field :age %><br/>
-  <%= f.label :town_you_live_in %>
-  <%= f.select :town_you_live_in, options_for_select(["Brooklyn", "Queens", "Bronx", "Jamaica", "Manhattan", "Long Island"]) %><br/>
-  <%= f.label :gender %>
-  <%= f.select :gender, options_for_select(["Female", "Male"])%><br/>
-  <%= f.label :preference_on_aides %>
-  <%= f.select :preference_on_aides, options_for_select(["Male", "Female", "It makes no difference"]) %><br/>
-  <%= f.label :password %>
-  <%= f.password_field  :password %><br>
-
-  <%= f.submit "Register Now!", :class => "btn btn-success" %>
-<% end %>
+<div class='form'>
+  <%= form_for @client do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %> <br/>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %><br/>
+    <%= f.label :email %>
+    <%= f.text_field :email %><br/>
+    <%= f.label :phone %>
+    <%= f.number_field :phone %><br/>
+    <%= f.label :age %>
+    <%= f.number_field :age %><br/>
+    <%= f.label :town_you_live_in %>
+    <%= f.select :town_you_live_in, options_for_select(["Brooklyn", "Queens", "Bronx", "Jamaica", "Manhattan", "Long Island"]) %><br/>
+    <%= f.label :gender %>
+    <%= f.select :gender, options_for_select(["Female", "Male"])%><br/>
+    <%= f.label :preference_on_aides %>
+    <%= f.select :preference_on_aides, options_for_select(["Male", "Female", "It makes no difference"]) %><br/>
+    <%= f.label :password %>
+    <%= f.password_field  :password %><br>
+    <%= f.submit "REGISTER NOW!", :class => "btn btn-success", :id => 'submit'  %>
+  <% end %>
+</div>
 
 </div>

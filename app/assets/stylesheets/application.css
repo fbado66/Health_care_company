@@ -22,8 +22,7 @@ body {
     letter-spacing: .5px;
 }
 
-#navbar {
-}
+
  .navbar-nav {
     margin: 10px 0 -15px 0 !important
  }
@@ -157,4 +156,42 @@ padding: 3% 0;
 #footer-link{
     text-decoration: none;
     color: black;
+}
+
+#login-img {
+    width: 50%;
+    border-radius: 10px;
+    margin: 20px 0 80px 0;
+}
+
+#sign-up {
+    border-radius: 10px;
+    margin: 25px 0;
+    width: 70%;
+    min-width: 400px;
+}
+
+.form {
+    width: 360px;
+    text-align: right;
+    margin: 0 auto;
+    
+}
+
+.form >input{
+    width: 250px;
+}
+
+select {
+    width: 182px;
+}
+
+#submit{
+    width: 200px;
+   margin: 20px 25% 80px 25%;
+}
+
+#btn-font a{
+    color: white;
+    padding: 0 80px;
 }

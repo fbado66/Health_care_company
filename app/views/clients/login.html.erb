@@ -1,17 +1,18 @@
 
 
-<div class="container">
+<div class="customized-container" id='client'>
     <h2>Welcome back Client</h2>
     <br>
         <% if @error %>
             <p><%= @error %></p>
         <% end %>
+        <img src='https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1635&q=80' alt='login-clients' id='login-img'>
         <%# THE FORM BELOW MAKES A POST REQUEST TO "/send_the_form_here" %>
         <%= form_tag "/send_the_form_here_2" do %>
             <strong><%= label_tag :first_name %></strong>
             <%= text_field_tag :first_name %><br>
             <strong><%= label_tag :password %></strong>
             <%= password_field_tag :password %><br>
-            <%= submit_tag "Login!", :class => "btn btn-success" %>
+            <%= submit_tag "LOGIN!", :class => "btn btn-success"  %>
         <% end %>
 </div>
