@@ -136,3 +136,25 @@ padding: 3% 0;
     height: 350px;
     border-radius: 15px;
 }
+
+#footer-igorCare {
+    text-align: left;
+    margin: 0 2%;
+    border-bottom: 1px solid black;
+}
+
+.footer-container {
+    background: #e7e7e8;
+    padding: 2% 0;
+}
+
+#card3 {
+    padding: 0 12%;
+    border: none!important;
+    background: #e7e7e8;
+}
+
+#footer-link{
+    text-decoration: none;
+    color: black;
+}
