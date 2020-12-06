@@ -1,35 +1,35 @@
-<div class="container">
+<div class="customized-container">
 
-<h1>Edit your profile </h1>
-<br>
+  <h1>Edit your profile <%=@aide.first_name %> </h1><br>
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcREHU2wEOzzvU8PPOO5Gv3J25I-9NluGdo8WQ&usqp=CAU">
-<br><br>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcREHU2wEOzzvU8PPOO5Gv3J25I-9NluGdo8WQ&usqp=CAU">
+      <br><br>
 
-
-<%= form_for @aide do |f| %>
- <%= f.label :first_name %>
-  <%= f.text_field :first_name %> <br/>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %><br/>
-  <%= f.label :email %>
-  <%= f.text_field :email %><br/>
-  <%= f.label :phone %>
-  <%= f.number_field :phone %><br/>
-  <%= f.label :age %>
-  <%= f.number_field :age %><br/>
-  <%= f.label :gender %>
-  <%= f.select :gender, options_for_select(["Male", "Female"]) %><br/>
-  <%= f.label :town_you_live_in %>
-  <%= f.select :town_you_live_in, options_for_select(["Brooklyn", "Queens", "Bronx", "Jamaica", "Manhattan", "Long Island"]) %><br/>
-  <%= f.label :town_you_can_work %>
-  <%= f.select :town_you_can_work, options_for_select(["Brooklyn", "Queens", "Bronx", "Jamaica", "Manhattan", "Long Island"]) %><br/>
-  <%= f.label :certifications %>
-  <%= f.select :certifications, options_for_select(["HHA Certification", "Nurse Certification", "HHA & Nurse Certification", "None"]) %><br/>
-  <%= f.label :password %>
-  <%= f.password_field :password %><br>
-  <%= f.submit "DONE!", :class => "btn btn-success" %>
-<% end %>
+    <div class='form'>
+      <%= form_for @aide do |f| %>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %> <br/>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %><br/>
+        <%= f.label :email %>
+        <%= f.text_field :email %><br/>
+        <%= f.label :phone %>
+        <%= f.number_field :phone %><br/>
+        <%= f.label :age %>
+        <%= f.number_field :age %><br/>
+        <%= f.label :gender %>
+        <%= f.select :gender, options_for_select(["Male", "Female"]) %><br/>
+        <%= f.label :town_you_live_in %>
+        <%= f.select :town_you_live_in, options_for_select(["Brooklyn", "Queens", "Bronx", "Jamaica", "Manhattan", "Long Island"]) %><br/>
+        <%= f.label :town_you_can_work %>
+        <%= f.select :town_you_can_work, options_for_select(["Brooklyn", "Queens", "Bronx", "Jamaica", "Manhattan", "Long Island"]) %><br/>
+        <%= f.label :certifications %>
+        <%= f.select :certifications, options_for_select(["HHA Certification", "Nurse Certification", "HHA & Nurse Certification", "None"]) %><br/>
+        <%= f.label :password %>
+        <%= f.password_field :password %><br>
+        <%= f.submit "DONE", :class => "btn btn-success", :id => 'submit' %>
+      <% end %>
+    </div>
 
 </div>
 

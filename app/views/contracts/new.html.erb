@@ -1,19 +1,19 @@
-<div class="container">
+<div class="customized-container">
   <h2>You are one step closer to start your career with us</h2>
     <br><br>
       <img src= "https://www.usnews.com/dims4/USNEWS/15b348e/2147483647/thumbnail/640x420/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2Fbc%2F52%2Fb84f002d4b4ca273b78f2a1c782a%2F140829-doctorandnurse-stock.jpg" class="card-img-center" alt="...">
-    <br><br>
-      <div class="container">
-        <%= form_for @contract do |f| %>
-          <%= f.label :service_id %>
-          <%= f.collection_select :service_id, @services, :id, :title %><br/>
-          <%= f.label :title, "Let's give it an unique title for you to remember it"  %>
-          <%= f.text_field :title %><br>
-          <%= f.label :availability_to_start, "Where can You start Working"  %>
-          <%= f.date_select :availability_to_start  %><br/>
-          <%= f.label :pay_rate ,"What is the pay-rate you are looking for" %>
-          $ <%= f.number_field :pay_rate %> / hr<br/> 
-          <%= f.submit "Ready!", :class => "btn btn-primary" %>
-        <% end %>
-      </div>
+        <br><br>
+          <div class="customized-container">
+            <%= form_for @contract do |f| %>
+              <%= f.label :service_id %>
+              <%= f.collection_select :service_id, @services, :id, :title %><br/>
+              <%= f.label :title, "Let's give it an unique title for you to remember it"  %>
+              <%= f.text_field :title %><br>
+              <%= f.label :availability_to_start, "Where can You start Working"  %>
+              <%= f.date_select :availability_to_start  %><br/>
+              <%= f.label :pay_rate ,"What is the pay-rate you are looking for" %>
+              $ <%= f.number_field :pay_rate %> / hr<br/> 
+              <%= f.submit "Ready!", :class => "btn btn-primary", :id => 'submit' %>
+            <% end %>
+          </div>
 </div>

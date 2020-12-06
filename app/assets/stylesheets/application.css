@@ -199,3 +199,12 @@ select {
 #nav-no-decoration {
     text-decoration: none;
 }
+
+a {
+    text-decoration: none!important;
+    color: black;
+}
+
+i {
+    padding-right: 3%;
+}

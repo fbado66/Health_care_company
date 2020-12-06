@@ -12,6 +12,8 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
       <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
   </head>
 
   <body>
@@ -37,7 +39,7 @@
             <a class="nav-link" href="/jobs">Careers</a>
           </li>
           <li class="nav-item">
-            <button type="button" class="nav-link" data-toggle="modal" data-target="#staticBackdrop">Contact Us</button>
+            <a class="nav-link" data-toggle="modal" data-target="#staticBackdrop">Contact Us</a>
           </li>
             <% if check_and_see_if_someone_is_logged_in_as_aide? %>
               <nav class="nav flex-column">
@@ -129,9 +131,10 @@
             <div class="card-body">
               <h5 class="card-title"><strong>Connect with us</strong></h5>
               <p class="card-text">
-              <p>LinkedIn</p>
-              <p>Github</p>
-              <p>Medium</p></p>
+                <p><a href='https://www.linkedin.com/in/franklin-bado/'><i style='font-size:24px' class='fab'>&#xf0e1;</i>franklin-bado</a></p>
+                <p><a href='https://github.com/fbado66'><i style='font-size:24px' class='fab'>&#xf09b;</i>fbado66</a></p>
+                <p><a href='https://medium.com/@fbado66'><i style='font-size:24px' class='fab'>&#xf3c7;</i>@fbado66</a></p>
+              </p>
             </div>
           </div>
         </div>

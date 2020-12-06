@@ -27,7 +27,7 @@
 
   <h2 class= "text-center"> All Contracts </h2>
     <% @contracts.map do |contract| %> 
-      <table class="table table-dark">
+      <table class="table table-info">
         <thead>
           <tr>
             <th scope="col">Service</th>
@@ -61,7 +61,7 @@
   <h2 class= "text-center"> All Clients in need of Igor Care </h2>
     <% @request_services.map do |request_service| %> 
       <% if request_service.request_jobs.count == 0 %>
-        <table class="table table-dark">
+        <table class="table table-warning">
           <thead>
             <tr>
               <th scope="col">Service</th>
@@ -97,7 +97,7 @@
 
   <h2 class= "text-center"> Current Jobs</h2>
     <% @request_jobs.map do |request_job| %> 
-      <table class="table table-dark">
+      <table class="table table-success">
         <thead>
           <tr>
             <th scope="col">Service</th>
