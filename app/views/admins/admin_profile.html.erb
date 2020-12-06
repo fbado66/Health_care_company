@@ -1,149 +1,133 @@
-<div class="container">
-    <h2> This is your profile Master <%= @current_admin.first_name %> </h2>
+<div class="customized-container">
+    <h2> Hello <%= @current_admin.first_name %> <br> This is your admin profile </h2>
     <br><br>
     
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+              <div class="card-body">
+                <h4 class="card-title"><strong>All Clients</strong></h4>
+                  <% @clients.map do |client| %> 
+                    <p class="card-text"><%= client.first_name %> <%= client.last_name %> </p>
+                  <% end %>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h4 class="card-title"><strong>All Aides</strong></h4>
+                  <% @aides.map do |aide| %> 
+                    <p class="card-text"><%= aide.first_name %> <%= aide.last_name %> </p>
+                  <% end %>
+              </div>
+            </div>
+        </div>
+    </div>
 
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">ALL CLIENTS</h5>
-    <% @clients.map do |client| %> 
-    <p class="card-text"><%= client.first_name %> <%= client.last_name %> </p>
+  <br><br>
+
+  <h2 class= "text-center"> All Contracts </h2>
+    <% @contracts.map do |contract| %> 
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Service</th>
+            <th scope="col">availability to start</th>
+            <th scope="col">Aide</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Pay Rate Looking for</th>
+            <th scope="col">Address</th>
+            <th scope="col">Willing to Travel</th>
+            <th scope="col">Certifications</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><%=contract.title %></th>
+            <td><%= contract.availability_to_start %></td>
+            <td><%= contract.aide.first_name %> <%= contract.aide.last_name %></td>
+            <td><%= contract.aide.gender %></td>
+            <td>$ <%= contract.pay_rate %>/ hr</td>
+            <td><%= contract.aide.town_you_live_in %></td>
+            <td><%= contract.aide.town_you_can_work %></td>
+            <td><%= contract.aide.certifications %></td>
+          </tr>
+        </tbody>
     <% end %>
-  </div>
+  </table>
+
+  <hr>
+  <br><br>
+
+  <h2 class= "text-center"> All Clients in need of Igor Care </h2>
+    <% @request_services.map do |request_service| %> 
+      <% if request_service.request_jobs.count == 0 %>
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Service</th>
+              <th scope="col">Client</th>
+              <th scope="col">Age</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Location</th>
+              <th scope="col">Prefers to work with </th>
+              <th scope="col">Hours requested</th>
+              <th scope="col">Comments</th>
+              <th scope="col">Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><%= link_to request_service.service.title, new_request_job_path %></th>
+              <td><%= request_service.client.first_name %> <%= request_service.client.last_name %> </td>
+              <td><%= request_service.client.age %></td>
+              <td><%= request_service.client.phone %></td>
+              <td><%= request_service.client.town_you_live_in%></td>
+              <td><%= request_service.client.preference_on_aides %> aides</td>
+              <td><%= request_service.hours %> hrs a week </td>
+              <td><%= request_service.comments %> </td>
+              <td><%= request_service.location %>  </td>
+            </tr>
+          </tbody>
+      <% end %>
+    <% end %>
+  </table>
+
+  <hr> 
+  <br><br>
+
+  <h2 class= "text-center"> Current Jobs</h2>
+    <% @request_jobs.map do |request_job| %> 
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Service</th>
+            <th scope="col">Aide</th>
+            <th scope="col">Aide's phone </th>
+            <th scope="col">Client</th>
+            <th scope="col">Client's phone</th>
+            <th scope="col">Weekly hrs approved </th>
+            <th scope="col">Approved Pay Rate</th>
+            <th scope="col">Starting Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><%= link_to request_job.request_service.service.title, request_job_path(request_job) %></th>
+            <td> <%=request_job.aide.first_name %>  <%=request_job.aide.last_name %> </td>
+            <td><%=request_job.aide.phone %></td>
+            <td><%= request_job.request_service.client.first_name %> <%= request_job.request_service.client.last_name %></td>
+            <td><%= request_job.request_service.client.phone %></td>
+            <td><%= request_job.hours %></td>
+            <td>$<%=request_job.pay_rate %> / hourly </td>
+            <td><%= request_job.starting_date %> </td>
+          </tr>
+        </tbody>
+    <% end %>
+  </table>
+
+  <hr> 
+
 </div>
-
-
-
-<br><br><br> 
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">ALL AIDES</h5>
-    <% @aides.map do |aide| %> 
-    <p class="card-text"><%= aide.first_name %> <%= aide.last_name %> </p>
-    <% end %>
-  </div>
-</div>
-
-<br><br>
-
-<h2 class= "text-center"> ALL CONTRACTS </h2>
-<% @contracts.map do |contract| %> 
-
-<table class="table table-dark">
-  <thead>
-    <tr>
-      <th scope="col">Service</th>
-      <th scope="col">availability to start</th>
-      <th scope="col">Aide</th>
-      <th scope="col">Gender</th>
-      <th scope="col">Pay Rate Looking for</th>
-      <th scope="col">Address</th>
-      <th scope="col">Willing to Travel</th>
-      <th scope="col">Certifications</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row"><%=contract.title %></th>
-      <td><%= contract.availability_to_start %></td>
-      <td><%= contract.aide.first_name %> <%= contract.aide.last_name %></td>
-      <td><%= contract.aide.gender %></td>
-      <td>$ <%= contract.pay_rate %>/ hr</td>
-      <td><%= contract.aide.town_you_live_in %></td>
-      <td><%= contract.aide.town_you_can_work %></td>
-      <td><%= contract.aide.certifications %></td>
-    </tr>
-  </tbody>
-  <% end %>
-</table>
-
-
-
-<hr>
-<br><br>
-
-<h2 class= "text-center"> ALL CLIENTS NEEDING IGOR CARE </h2>
-<% @request_services.map do |request_service| %> 
-<% if request_service.request_jobs.count == 0 %>
-
-
-<table class="table table-dark">
-  <thead>
-    <tr>
-      <th scope="col">Service</th>
-      <th scope="col">Client</th>
-      <th scope="col">Age</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Location</th>
-      <th scope="col">Prefers to work with </th>
-      <th scope="col">Hours requested</th>
-      <th scope="col">Comments</th>
-      <th scope="col">Location</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row"><%= link_to request_service.service.title, new_request_job_path %></th>
-      <td><%= request_service.client.first_name %> <%= request_service.client.last_name %> </td>
-      <td><%= request_service.client.age %></td>
-      <td><%= request_service.client.phone %></td>
-      <td><%= request_service.client.town_you_live_in%></td>
-      <td><%= request_service.client.preference_on_aides %> aides</td>
-      <td><%= request_service.hours %> a week </td>
-      <td><%= request_service.comments %> </td>
-      <td><%= request_service.location %>  </td>
-
-    </tr>
-  </tbody>
-  <% end %>
-    <% end %>
-
-</table>
-
-<hr> 
-
-<br><br>
-
-
-<h2 class= "text-center"> CURRENT JOBS </h2>
- <% @request_jobs.map do |request_job| %> 
-
-
-
-<table class="table table-dark">
-  <thead>
-    <tr>
-      <th scope="col">Service</th>
-      <th scope="col">Aide</th>
-      <th scope="col">Aide's phone </th>
-      <th scope="col">Client</th>
-      <th scope="col">Client's phone</th>
-      <th scope="col">Weekly hrs approved </th>
-      <th scope="col">Approved Pay Rate</th>
-      <th scope="col">Starting Date</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row"><%= link_to request_job.request_service.service.title, request_job_path(request_job) %></th>
-      <td> <%=request_job.aide.first_name %>  <%=request_job.aide.last_name %> </td>
-      <td><%=request_job.aide.phone %></td>
-      <td><%= request_job.request_service.client.first_name %> <%= request_job.request_service.client.last_name %></td>
-      <td><%= request_job.request_service.client.phone %></td>
-      <td><%= request_job.hours %></td>
-      <td>$<%=request_job.pay_rate %> / hourly </td>
-      <td><%= request_job.starting_date %> </td>
-
-    </tr>
-  </tbody>
-  <% end %>
-
-
-</table>
-
-<hr> 
 
 
 

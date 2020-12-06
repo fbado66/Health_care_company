@@ -15,9 +15,6 @@
   </head>
 
   <body>
-
-
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id='navbar'>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -42,7 +39,25 @@
           <li class="nav-item">
             <button type="button" class="nav-link" data-toggle="modal" data-target="#staticBackdrop">Contact Us</button>
           </li>
-      
+            <% if check_and_see_if_someone_is_logged_in_as_aide? %>
+              <nav class="nav flex-column">
+                <a class="nav-link"><%= link_to "My Profile", profile_path, method: :get, :class => "btn-primary", :id => 'nav-no-decoration'%></a>
+                <a class="nav-link"><%= button_to "Log Out", logout_path, method: :delete, :class => "btn-danger", :id => 'nav-no-decoration' %></a>
+              </nav>
+
+            <% elsif check_and_see_if_someone_is_logged_in_as_client? %>
+              <nav class="nav flex-column">
+                <a class="nav-link"><%= link_to "My Profile", my_profile_path, method: :get, :class => "btn-primary", :id => 'nav-no-decoration'%></a>
+                <a class="nav-link"><%= button_to "Log Out", logout_2_path, method: :delete, :class => "btn-danger", :id => 'nav-no-decoration' %></a>
+              </nav>
+
+            <% elsif check_and_see_if_someone_is_logged_in_as_admin? %>
+              <nav class="nav flex-column">
+                <a class="nav-link"><%= link_to "My Profile", admin_profile_path, method: :get, :class => "btn-primary", :id => 'nav-no-decoration'%></a>
+                <a class="nav-link"><%= button_to "Log Out", logout_3_path, method: :delete, :class => "btn-danger", :id => 'nav-no-decoration' %></a>
+              </nav>
+
+            <% else %>            
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Log in</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -52,34 +67,13 @@
               </div>
           </li>
 
-
-          
+          <% end %>
+ 
         </ul>
       </div>
     </nav>
     
-    <% if check_and_see_if_someone_is_logged_in_as_aide? %>
-      <nav class="nav flex-column">
-        <a class="nav-link active" >Hello <%= @current_aide.first_name %></a>
-        <a class="nav-link"><%= button_to "LOG OUT", logout_path, method: :delete, :class => "btn btn-danger" %></a>
-        <a class="nav-link"><%= button_to "My Profile", profile_path, method: :get, :class => "btn btn-success"%></a>
-      </nav>
-
-    <% elsif check_and_see_if_someone_is_logged_in_as_client? %>
-      <nav class="nav flex-column">
-        <a class="nav-link active" >Hello <%= @current_client.first_name %></a>
-        <a class="nav-link"><%= button_to "LOG OUT", logout_2_path, method: :delete, :class => "btn btn-danger" %></a>
-        <a class="nav-link"><%= button_to "My Profile", my_profile_path, method: :get, :class => "btn btn-success"%></a>
-      </nav>
-
-    <% elsif check_and_see_if_someone_is_logged_in_as_admin? %>
-      <nav class="nav flex-column">
-        <a class="nav-link active"> Master: <%= @current_admin.first_name %></a>
-        <a class="nav-link"><%= button_to "LOG OUT", logout_3_path, method: :delete, :class => "btn btn-danger" %></a>
-        <a class="nav-link"><%= button_to "My Profile", admin_profile_path, method: :get, :class => "btn btn-success"%></a>
-      </nav>
-    <% end %>
-  
+      
 
     <!-- Button trigger modal -->
     <!-- Modal -->
