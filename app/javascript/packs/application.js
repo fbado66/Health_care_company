@@ -3,9 +3,12 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-import 'jquery'
-import 'popper.js'
-import 'bootstrap'
+//= require jquery-ui
+//= require jquery_ujs
+//= require bootstrap-dropdown
+//= require bootstrap
+//= require jquery
+//= require_tree .
 
 require("@rails/ujs").start()
 require("turbolinks").start()
