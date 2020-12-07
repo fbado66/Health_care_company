@@ -209,3 +209,7 @@ a {
 i {
     padding-right: 3%;
 }
+
+#link_to_job {
+    color: blue;
+}

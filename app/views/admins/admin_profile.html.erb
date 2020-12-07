@@ -112,7 +112,7 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row"><%= link_to request_job.request_service.service.title, request_job_path(request_job) %></th>
+            <th scope="row" id='link_to_job'><strong><%= link_to request_job.request_service.service.title, request_job_path(request_job) %></strong></th>
             <td> <%=request_job.aide.first_name %>  <%=request_job.aide.last_name %> </td>
             <td><%=request_job.aide.phone %></td>
             <td><%= request_job.request_service.client.first_name %> <%= request_job.request_service.client.last_name %></td>
