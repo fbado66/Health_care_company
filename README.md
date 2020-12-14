@@ -21,9 +21,9 @@ For login, the site is divided in three sections, Clients, Aides, and Admin, in 
 
 
 ## Original Wireframe 
-<img src='/images/wireframe_section-1.png'>
-<img src='/images/wireframe_section-2.png'>
-<img src='/images/wireframe_section-3.png'>
+<img src='/app/assets/images/wireframe_section-1.png'>
+<img src='/app/assets/images/wireframe_section-2.png'>
+<img src='/app/assets/images/wireframe_section-3.png'>
 
 ## Tech Stacks
 <p>Ruby on Rails </p>
