@@ -3,7 +3,7 @@
 ## Igor Care 
 
 <p>A web application built with Ruby on Rails that has 3 different types of users, the purpose of the project is to create and address health care requests.</p> 
-<a href='https://peaceful-headland-40438.herokuapp.com/'><img src= '/images/igor_care.png'></a>
+<a href='https://peaceful-headland-40438.herokuapp.com/'><img src= '/app/assets/images/igor_care.png'></a>
 <p>Users can navigate the site without having to login, the first thing they are presented with is the home page, where they can learn about the company, there is a navbar that allows to transit from one page to another. The <strong>about</strong> section is an added on for this project to give more credibility to the site. the <strong>Services </strong>section is dedicated for all the potential clients to learn about the services Igor Care has to offer, and the <strong>Careers</strong> section is for anyone who is interested in forming part of the company, they can apply to the different jobs. <br>
 For login, the site is divided in three sections, Clients, Aides, and Admin, in here with the used of bcrypt, each type of user will have their own space and accesability to the appropiate channels. </p>
 
@@ -17,7 +17,7 @@ For login, the site is divided in three sections, Clients, Aides, and Admin, in 
 <p>Admin has access to the whole application, and can paired up clients with aides based on different criteria</p>
 
 ## Active Record Associations 
-<img src ='/images/domain_model.png'>
+<img src ='/app/assets/images/domain_model.png'>
 
 
 ## Original Wireframe 
