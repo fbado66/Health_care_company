@@ -7,6 +7,9 @@
 <p>Users can navigate the site without having to login, the first thing they are presented with is the home page, where they can learn about the company, there is a navbar that allows to transit from one page to another. The <strong>about</strong> section is an added on for this project to give more credibility to the site. the <strong>Services </strong>section is dedicated for all the potential clients to learn about the services Igor Care has to offer, and the <strong>Careers</strong> section is for anyone who is interested in forming part of the company, they can apply to the different jobs. <br>
 For login, the site is divided in three sections, Clients, Aides, and Admin, in here with the used of bcrypt, each type of user will have their own space and accesability to the appropiate channels. </p>
 
+## Demo
+<a href='https://youtu.be/3pMCatjNueQ'><img src='/youtube-logo.png' /></a><br>   
+
 ## Features 
 
 <p>Serializers</p>
